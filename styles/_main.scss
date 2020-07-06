@@ -1,0 +1,104 @@
+#container {
+    main {
+        //margin: auto;
+        text-align: center;
+        //height: 430px;
+    
+        #inspirate {
+            background: $bgOne;
+            //border: $borde;
+    
+            h1 {
+                //width: 100%;
+                @extend %h1;
+                //border: $borde;
+                //text-align: center;
+                padding: 2px 11.7% 0;
+        
+                span {
+                    color: $colorSecundary;
+                }
+            }
+        
+            img {
+                width: 72.8%;
+                height: 10.8%;
+                padding-top: 27px;
+                //border: $borde;
+            }
+
+            /* .over {
+                //width: 100%;
+                position: absolute;
+                border: $borde;
+                margin-left: 20px; */
+
+                input {
+                    width: 89.1%;
+                    height: 50px;
+                    border: $borde $colorPrimary;
+                    border-radius: 27px;
+                    text-align: left;
+                    margin-top: -3px;
+                    //z-index: 1;
+                }
+
+                /* img {
+                    z-index: 2;
+                }
+            } */
+
+            h3 {
+                @extend %h3;
+                //border: solid yellow;
+                padding: 30px 69px 48px 70px;
+                //border: $borde;
+            }
+
+            /* &.dark {
+                background: $bgDark;
+
+                h1 {
+                    color: $bgOne;
+                }
+
+                h3 {
+                    color: $bgOne;
+                }
+            } */
+        }
+    
+        #trending {
+            background: $bgTwo;
+            //border: $borde;
+    
+            h2 {
+                @extend %h2;
+                padding-top: 44px;
+            }
+    
+            h4 {
+                @extend %h4;
+                padding-top: 9px;
+            }
+
+            img {
+                width: 64.8%;
+                height: 15.6%;
+                margin: 32px 22px 82px 22px;
+            }
+
+            /* &.dark {
+                background: $bgDarkTwo;
+
+                h2 {
+                    color: $bgOne;
+                }
+
+                h4 {
+                    color: $bgOne;
+                }
+            } */
+        }
+    }
+}

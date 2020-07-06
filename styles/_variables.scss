@@ -1,0 +1,49 @@
+$bgOne:#FFF;
+$bgTwo: #F3F5F8;
+$bgDark: #37383C;
+$bgDarkTwo: #222326;
+$colorPrimary: #572EE5;
+$colorSecundary:  #50E3C2;
+$colorBlack: #000;
+$borde: 1px solid;
+
+%h1 {
+    color: $colorPrimary;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+
+%h2 {
+    color: $colorPrimary;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+}
+
+%h3 {
+    color: $colorPrimary;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+}
+
+%h4 {
+    color: $colorBlack;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+}
+
+%p1 {
+    color: $colorBlack;
+    font-size: 15px;
+    letter-spacing: 0;
+}
+
+%p2 {
+    color: $colorBlack;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
