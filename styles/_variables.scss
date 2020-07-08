@@ -47,3 +47,11 @@ $borde: 1px solid;
     line-height: 20px;
     letter-spacing: 0;
 }
+
+%a {
+    color: $bgOne;
+    font-size: 20px;
+    line-height: 60px;
+    //text-align: center;
+    text-decoration: none;
+}
