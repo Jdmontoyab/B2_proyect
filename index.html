@@ -8,13 +8,13 @@
 </head>
 <body>
     <div id="container">
-        <header class="dark">
+        <header class="dark" id="header">
             <nav class="nav">
                 <div class="logo">
-                    <img src="./assets/icons/logo-mobile.svg" alt="logo_mobile">
-                    <img src="./assets/icons/burger.svg" alt="">
+                    <a href="#"><img src="./assets/icons/logo-mobile.svg" alt="logo_mobile"></a>
+                    <a href="#" class="boton" id="boton"><img class="icono" src="./assets/icons/burger.svg" alt="burger"></a>
                 </div>
-                <div class="menu">
+                <div class="menu" id="menu">
                     <ul>
                         <li><a href="">Modo Nocturno</a></li>
                         <li><a href="">Favoritos</a></li>
@@ -50,5 +50,7 @@
             <p id="p2">© GIFOS 2020 All Rights Reserved.</p>
         </footer>
     </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
