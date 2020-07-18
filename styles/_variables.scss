@@ -9,6 +9,7 @@ $borde: 1px solid;
 
 %h1 {
     color: $colorPrimary;
+    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     line-height: 36px;
     text-align: center;
@@ -16,6 +17,7 @@ $borde: 1px solid;
 
 %h2 {
     color: $colorPrimary;
+    font-family: 'Montserrat', sans-serif;
     font-size: 25px;
     line-height: 30px;
     text-align: center;
@@ -23,13 +25,24 @@ $borde: 1px solid;
 
 %h3 {
     color: $colorPrimary;
-    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
+
+%reactions {
+    color: $colorPrimary;
+    font-family: 'Montserrat-medium', sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
     line-height: 25px;
     text-align: center;
 }
 
 %h4 {
     color: $colorBlack;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 23px;
     text-align: center;

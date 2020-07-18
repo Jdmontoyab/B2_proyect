@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +10,7 @@
 
 #container main #inspirate h1 {
   color: #572EE5;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   line-height: 36px;
   text-align: center;
@@ -14,6 +18,7 @@
 
 #container main #trending h2 {
   color: #572EE5;
+  font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   line-height: 30px;
   text-align: center;
@@ -21,13 +26,24 @@
 
 #container main #inspirate h3 {
   color: #572EE5;
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+}
+
+#container main #inspirate p {
+  color: #572EE5;
+  font-family: 'Montserrat-medium', sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
   line-height: 25px;
   text-align: center;
 }
 
 #container main #trending h4 {
   color: #000;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 23px;
   text-align: center;
@@ -60,6 +76,7 @@
   top: 0;
   background: #FFF;
   border-top: 5px solid #572EE5;
+  border: 1px solid;
   /* &.dark {
             background: $bgDark;
         } */
@@ -73,14 +90,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 #container header nav .logo {
   width: 100%;
-  padding: 10px;
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,13 +112,9 @@
 
 #container header nav .menu {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: none;
+  /* display: flex;
+                flex-direction: column; */
 }
 
 #container header nav .menu ul {
@@ -126,6 +136,17 @@
 
 #container main #inspirate {
   background: #FFF;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* .over {
                 //width: 100%;
                 position: absolute;
@@ -149,7 +170,7 @@
 }
 
 #container main #inspirate h1 {
-  padding: 2px 11.7% 0;
+  margin-top: 7px;
 }
 
 #container main #inspirate h1 span {
@@ -159,24 +180,29 @@
 #container main #inspirate img {
   width: 72.8%;
   height: 10.8%;
-  padding-top: 27px;
+  margin-top: 31px;
 }
 
 #container main #inspirate input {
   width: 89.1%;
   height: 50px;
+  font-family: 'Roboto', sans-serif;
   border: 1px solid #572EE5;
   border-radius: 27px;
   text-align: left;
-  margin-top: -3px;
 }
 
 #container main #inspirate h3 {
-  padding: 30px 69px 48px 70px;
+  margin-top: 31px;
+}
+
+#container main #inspirate p {
+  margin: 2px 24% 45px;
 }
 
 #container main #trending {
   background: #F3F5F8;
+  border: 1px solid;
   /* &.dark {
                 background: $bgDarkTwo;
 
@@ -191,11 +217,11 @@
 }
 
 #container main #trending h2 {
-  padding-top: 44px;
+  margin-top: 44px;
 }
 
 #container main #trending h4 {
-  padding-top: 9px;
+  margin-top: 9px;
 }
 
 #container main #trending img {
@@ -207,6 +233,7 @@
 #container footer {
   background: #FFF;
   text-align: center;
+  border: 1px solid;
   /* &.dark {
             background: $bgDark;
 
@@ -233,38 +260,12 @@
   padding: 47.8px 0 23px;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 414px) {
   #container header {
-    height: 93px;
-    background: yellow;
-    border: 1px solid;
+    height: 95px;
   }
   #container header nav {
     height: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #container header nav .logo {
-    padding: 0;
-  }
-  #container header nav .logo .boton {
-    display: none;
-  }
-  #container header nav .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  #container header nav .menu ul {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -276,30 +277,142 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  #container header nav .logo {
+    width: unset;
+    display: unset;
+  }
+  #container header nav .logo .boton {
+    display: none;
+  }
+  #container header nav .menu {
+    width: unset;
+    padding: 0 1em;
+    display: inline-block;
+  }
+  #container header nav .menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   #container header nav .menu ul li {
     width: unset;
     background: unset;
-    text-align: unset;
+    padding-left: 1em;
   }
   #container header nav .menu ul li a {
     color: #572EE5;
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0;
+    text-transform: uppercase;
+  }
+  #container main #inspirate {
+    /* h1 {
+
+                } */
+  }
+  #container main #inspirate img {
+    width: 32.7%;
+    height: 11.5%;
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
   #container {
     max-width: 1440px;
   }
   #container header {
-    background: black;
+    height: 90px;
+  }
+  #container header nav .logo {
+    padding-left: 10.8%;
+  }
+  #container header nav .menu {
+    padding-right: 18.7%;
+  }
+  #container header nav .menu ul li {
+    padding-left: 45px;
+  }
+  #container main #inspirate h1 {
+    border: 1px solid;
+    font-size: 35px;
+    line-height: 50px;
+    margin-top: 76px;
+    margin-left: 17.6%;
+    margin-right: 17.6%;
+    padding-left: 11.6%;
+    padding-right: 11.6%;
+  }
+  #container main #inspirate img {
+    width: 27.7%;
+    height: 12.5%;
+    margin-top: 24px;
+  }
+  #container main #inspirate input {
+    width: 38.3%;
+  }
+  #container main #inspirate h3 {
+    margin-top: 73px;
+    font-size: 18px;
+  }
+  #container main #inspirate p {
+    font-size: 16px;
+    margin-top: 7px;
+    margin-bottom: 95px;
+  }
+  #container main #trending h2 {
+    margin-top: 67px;
+  }
+  #container main #trending h4 {
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 12px;
+  }
+  #container main #trending img {
+    width: 24.8%;
+    height: 18.1%;
+    margin-top: 53px;
+  }
+  #container footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #container footer .redes {
+    border: 1px solid;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 }
 
 #container {
-  min-width: 375px;
   width: 100%;
   border-bottom: 5px solid #572EE5;
   padding-top: 95px;

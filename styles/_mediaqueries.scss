@@ -1,22 +1,26 @@
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 414px) {
     #container {
         header {
-            height: 93px;
+            height: 95px;
             //top: 0;
-            background: yellow;
+            //background: yellow;
             //position: fixed;
-            border: $borde;
+            //border: $borde;
 
             nav {
                 //margin: auto;
                 height: 100%;
+                //border: $borde;
 
                 flex-direction: row;
-                //justify-content: space-between;
+                justify-content: space-between;
                 align-items: center;
 
                 .logo {
-                    padding: 0;
+                    width: unset;
+                    display: unset;
+                    //border: $borde;
+                    //padding: 0;
 
                     .boton {
                         display: none;
@@ -24,40 +28,149 @@
                 }
 
                 .menu {
-                    display: flex;
+                    width: unset;
+                    //border: $borde;
+                    padding: 0 1em;
+
+                    display: inline-block;
+                    
 
                     ul {
-                        width: 100%;
+                        //width: 100%;
+                        //border: $borde;
+                        //text-align: center;
+
                         display: flex;
                         flex-direction: row;
-                        justify-content: space-between;
+                        justify-content: center;
                         align-items: center;
 
                         li {
                             width: unset;
                             background: unset;
-                            text-align: unset;
+                            padding-left: 1em;
+                            //text-align: center;
 
                             a {
                                 color: $colorPrimary;
                                 font-size: 14px;
                                 line-height: 17px;
                                 letter-spacing: 0;
+                                text-transform: uppercase;
                             }
                         }
                     }
                 }
             }
         }
+
+        main {
+            #inspirate {
+                /* h1 {
+
+                } */
+
+                img {
+                    width: 32.7%;
+                    height: 11.5%;
+                }
+            }
+        }
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 768px) {
     #container {
         max-width: 1440px;
 
         header {
-            background: black;
+            height: 90px;
+
+            nav {
+                .logo {
+                    padding-left: 10.8%;
+                }
+
+                .menu {
+                    padding-right: 18.7%;
+
+                    ul {
+                        li {
+                            padding-left: 45px;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            #inspirate {
+                h1 {
+                    border: $borde;
+                    font-size: 35px;
+                    line-height: 50px;
+                    margin-top: 76px;
+                    margin-left: 17.6%;
+                    margin-right: 17.6%;
+                    padding-left: 11.6%;
+                    padding-right: 11.6%;
+                    //padding: 5% 17.6% 0 17.6%;
+                }
+
+                img {
+                    width: 27.7%;
+                    height: 12.5%;
+                    margin-top: 24px;
+                }
+
+                input {
+                    width: 38.3%;
+                }
+
+                h3 {
+                    margin-top: 73px;
+                    font-size: 18px;
+                }
+
+                p {
+                    font-size: 16px;
+                    margin-top: 7px;
+                    margin-bottom: 95px;
+                }
+            }
+
+            #trending {
+                h2 {
+                    margin-top: 67px;
+                }
+
+                h4 {
+                    font-size: 18px;
+                    line-height: 21px;
+                    margin-top: 12px;
+                }
+
+                img {
+                    width: 24.8%;
+                    height: 18.1%;
+                    margin-top: 53px;
+                }
+            }
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .redes {
+                border: $borde;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                //align-items: center;
+                align-content: center;
+            }
         }
     }
 }

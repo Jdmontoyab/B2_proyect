@@ -2,7 +2,7 @@
     footer {
         background: $bgOne;
         text-align: center;
-        //border: $borde;
+        border: $borde;
 
         #p1 {
             @extend %p1;

@@ -6,14 +6,18 @@
     
         #inspirate {
             background: $bgOne;
-            //border: $borde;
+            border: $borde;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
     
             h1 {
                 //width: 100%;
                 @extend %h1;
+                margin-top: 7px;
                 //border: $borde;
                 //text-align: center;
-                padding: 2px 11.7% 0;
+                //padding: 0.6% 11.7% 0 12%;
         
                 span {
                     color: $colorSecundary;
@@ -23,7 +27,7 @@
             img {
                 width: 72.8%;
                 height: 10.8%;
-                padding-top: 27px;
+                margin-top: 31px;
                 //border: $borde;
             }
 
@@ -36,10 +40,11 @@
                 input {
                     width: 89.1%;
                     height: 50px;
+                    font-family: 'Roboto', sans-serif;
                     border: $borde $colorPrimary;
                     border-radius: 27px;
                     text-align: left;
-                    margin-top: -3px;
+                    //margin-top: -3px;
                     //z-index: 1;
                 }
 
@@ -50,8 +55,14 @@
 
             h3 {
                 @extend %h3;
-                //border: solid yellow;
-                padding: 30px 69px 48px 70px;
+                margin-top: 31px;
+                //padding: 2.6% 18.4% 0 18.7%;
+            }
+
+            p {
+                @extend %reactions;
+                margin: 2px 24% 45px;
+                //padding: 0.2% 24% 0 24%;
                 //border: $borde;
             }
 
@@ -70,16 +81,16 @@
     
         #trending {
             background: $bgTwo;
-            //border: $borde;
+            border: $borde;
     
             h2 {
                 @extend %h2;
-                padding-top: 44px;
+                margin-top: 44px;
             }
     
             h4 {
                 @extend %h4;
-                padding-top: 9px;
+                margin-top: 9px;
             }
 
             img {
