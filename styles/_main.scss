@@ -6,7 +6,7 @@
     
         #inspirate {
             background: $bgOne;
-            border: $borde;
+            //border: $borde;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,34 +24,39 @@
                 }
             }
         
-            img {
+            .ilustra {
                 width: 72.8%;
                 height: 10.8%;
                 margin-top: 31px;
                 //border: $borde;
             }
 
-            /* .over {
-                //width: 100%;
-                position: absolute;
-                border: $borde;
-                margin-left: 20px; */
+            .search {
+                width: 89.1%;
+                height: 50px;
+                border-radius: 27px;
+                border: 1px solid $colorPrimary;
+
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
 
                 input {
-                    width: 89.1%;
-                    height: 50px;
-                    font-family: 'Roboto', sans-serif;
-                    border: $borde $colorPrimary;
-                    border-radius: 27px;
-                    text-align: left;
+                    @extend %input;
                     //margin-top: -3px;
                     //z-index: 1;
                 }
 
-                /* img {
-                    z-index: 2;
+                a {
+                    width: 20px;
+                    height: 20px;
+
+                    .LogoSearch {
+                        width: 5.3%;
+                        height: 1.7%;
+                    }
                 }
-            } */
+            } 
 
             h3 {
                 @extend %h3;
@@ -66,17 +71,21 @@
                 //border: $borde;
             }
 
-            /* &.dark {
+            &.dark {
                 background: $bgDark;
 
                 h1 {
                     color: $bgOne;
                 }
 
+                .search {
+                    border-color: $bgOne;
+                }
+
                 h3 {
                     color: $bgOne;
                 }
-            } */
+            }
         }
     
         #trending {
@@ -93,13 +102,14 @@
                 margin-top: 9px;
             }
 
-            img {
-                width: 64.8%;
-                height: 15.6%;
-                margin: 32px 22px 82px 22px;
+            .content {
+                background: red;
+
+                display: grid;
+                grid-template-columns: 1fr;
             }
 
-            /* &.dark {
+            &.dark {
                 background: $bgDarkTwo;
 
                 h2 {
@@ -109,7 +119,7 @@
                 h4 {
                     color: $bgOne;
                 }
-            } */
+            }
         }
     }
 }

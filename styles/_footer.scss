@@ -3,6 +3,7 @@
         background: $bgOne;
         text-align: center;
         border: $borde;
+        border-bottom: 5px solid $colorPrimary;
 
         #p1 {
             @extend %p1;
@@ -19,8 +20,9 @@
             padding: 47.8px 0 23px;
         }
 
-        /* &.dark {
+        &.dark {
             background: $bgDark;
+            border-bottom: 5px solid $colorBlack;
 
             #p1 {
                 color: $bgOne;
@@ -29,6 +31,6 @@
             #p2 {
                 color: $bgOne;
             }
-        } */
+        }
     }
 }

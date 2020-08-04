@@ -2,10 +2,18 @@ $bgOne:#FFF;
 $bgTwo: #F3F5F8;
 $bgDark: #37383C;
 $bgDarkTwo: #222326;
-$colorPrimary: #572EE5;
+$colorPrimary: #572ee5;
 $colorSecundary:  #50E3C2;
 $colorBlack: #000;
 $borde: 1px solid;
+
+%menu {
+    color: $bgOne;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 60px;
+}
 
 %h1 {
     color: $colorPrimary;
@@ -13,6 +21,13 @@ $borde: 1px solid;
     font-size: 30px;
     line-height: 36px;
     text-align: center;
+}
+
+%input {
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 %h2 {
