@@ -38,18 +38,21 @@
                 border: 1px solid $colorPrimary;
 
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-between;
                 align-items: center;
 
                 input {
                     @extend %input;
-                    //margin-top: -3px;
-                    //z-index: 1;
+                    margin-left: 55px;
+                    //border: $borde;
                 }
 
                 a {
                     width: 20px;
                     height: 20px;
+
+                    margin-right: 20px;
+                    //border: $borde;
 
                     .LogoSearch {
                         width: 5.3%;
@@ -66,7 +69,7 @@
 
             p {
                 @extend %reactions;
-                margin: 2px 24% 45px;
+                margin: 2px 75px 45px;
                 //padding: 0.2% 24% 0 24%;
                 //border: $borde;
             }
@@ -80,6 +83,10 @@
 
                 .search {
                     border-color: $bgOne;
+
+                    input {
+                        background-color: $bgDark;
+                    }
                 }
 
                 h3 {
@@ -89,24 +96,139 @@
         }
     
         #trending {
+            height: 430px;
             background: $bgTwo;
-            border: $borde;
+            //border: $borde;
     
             h2 {
                 @extend %h2;
-                margin-top: 44px;
+                padding-top: 46px;
             }
     
             h4 {
                 @extend %h4;
-                margin-top: 9px;
+                margin-top: 7px;
             }
 
             .content {
-                background: red;
+                //margin: auto;
+                //height: 300px;
+                //border: $borde;
 
-                display: grid;
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+
+                /* .anterior {
+                    display: none;
+                } */
+
+                .lista {
+                    .glider-track {
+                        //width: 243px;
+                        height: 300px;
+                        border: $borde;
+
+                        .gif {
+                            width: 243px;
+                            height: 300px;
+                            position: relative;
+                            //border: $borde;
+                            margin: 32px 11px 82px;
+                        
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+
+                            .over {
+                                width: 0;
+                                height: 0;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                background: rgba($colorPrimary, 0.7);
+                                
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;;
+
+                                .buttonGif {
+                                    display: none;
+                                    margin: 10px 10px 0 0;
+                                    //border: 1px solid;
+            
+                                    .icon {
+                                        width: 32px;
+                                        height: 32px;
+                                        background: $bgOne;
+                                        border-radius: 6px;
+                                        opacity: 0.7;
+                                        padding: 7px;
+
+                                        &:hover {
+                                            opacity: 1;
+                                        }
+                                    }
+
+                                    #fav {
+                                        &:hover {
+                                            opacity: 1;
+                                            //content: url(./assets/icons/icon-fav-active.svg);
+                                        }
+                                    }
+                                }
+            
+                                .infoGif {
+                                    display: none;
+                                    margin: 0 0 30px 13px;
+                                    //border: $borde;
+            
+                                    #user {
+                                        @extend %p1;
+                                        color: $bgOne;
+                                        text-align: left;
+                                    }
+            
+                                    #title {
+                                        font-family: 'Roboto', sans-serif;
+                                        font-weight: bold;
+                                        color: $bgOne;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        text-align: left;
+                                        margin-top: 5px;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                .over {
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                }
+
+                                .buttonGif {
+                                    display: block;
+                                    align-self: flex-end;
+                                }
+
+                                .infoGif {
+                                    display: block;
+                                    //align-self: flex-start;
+                                    justify-self: self-end;
+                                    bottom: 0;
+                                }
+                            }
+                        }
+                    }    
+               }
+
+               /* .siguiente {
+                   display: none;
+               } */
             }
 
             &.dark {

@@ -17,7 +17,7 @@
 }
 
 #container main #inspirate h1 {
-  color: #572ee5;
+  color: #572EE5;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   line-height: 36px;
@@ -27,12 +27,14 @@
 #container main #inspirate .search input {
   border: none;
   font-family: 'Roboto', sans-serif;
+  color: #000;
   font-size: 16px;
   line-height: 19px;
+  text-align: left;
 }
 
 #container main #trending h2 {
-  color: #572ee5;
+  color: #572EE5;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   line-height: 30px;
@@ -40,7 +42,7 @@
 }
 
 #container main #inspirate h3 {
-  color: #572ee5;
+  color: #572EE5;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 25px;
@@ -48,7 +50,7 @@
 }
 
 #container main #inspirate p {
-  color: #572ee5;
+  color: #572EE5;
   font-family: 'Montserrat-medium', sans-serif;
   font-size: 14px;
   font-weight: lighter;
@@ -64,14 +66,18 @@
   text-align: center;
 }
 
-#container footer #p1 {
+#container main #trending .content .lista .glider-track .gif .over .infoGif #user, #container footer #p1 {
   color: #000;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
+  line-height: 18px;
   letter-spacing: 0;
 }
 
 #container footer #p2 {
   color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
@@ -90,7 +96,7 @@
   position: fixed;
   top: 0;
   background: #FFF;
-  border-top: 5px solid #572ee5;
+  border-top: 5px solid #572EE5;
 }
 
 #container header nav {
@@ -121,12 +127,17 @@
           align-items: center;
 }
 
+#container header nav .logo.dark #logoPpal {
+  content: url("../assets/icons/logo-desktop-modo-noc.svg");
+}
+
+#container header nav .on {
+  display: none;
+}
+
 #container header nav .menu {
   width: 100%;
   height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -168,12 +179,12 @@
   opacity: 0.5;
 }
 
-#container header nav .menu.dark li {
-  background: #000;
+#container header nav .menu ul img {
+  display: none;
 }
 
-#container header nav .menu.on {
-  display: none;
+#container header nav .menu.dark li {
+  background: #000;
 }
 
 #container header.dark {
@@ -217,20 +228,26 @@
   width: 89.1%;
   height: 50px;
   border-radius: 27px;
-  border: 1px solid #572ee5;
+  border: 1px solid #572EE5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
+#container main #inspirate .search input {
+  margin-left: 55px;
+}
+
 #container main #inspirate .search a {
   width: 20px;
   height: 20px;
+  margin-right: 20px;
 }
 
 #container main #inspirate .search a .LogoSearch {
@@ -243,7 +260,7 @@
 }
 
 #container main #inspirate p {
-  margin: 2px 24% 45px;
+  margin: 2px 75px 45px;
 }
 
 #container main #inspirate.dark {
@@ -258,29 +275,143 @@
   border-color: #FFF;
 }
 
+#container main #inspirate.dark .search input {
+  background-color: #37383C;
+}
+
 #container main #inspirate.dark h3 {
   color: #FFF;
 }
 
 #container main #trending {
+  height: 430px;
   background: #F3F5F8;
-  border: 1px solid;
 }
 
 #container main #trending h2 {
-  margin-top: 44px;
+  padding-top: 46px;
 }
 
 #container main #trending h4 {
-  margin-top: 9px;
+  margin-top: 7px;
 }
 
 #container main #trending .content {
-  background: red;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* .anterior {
+                    display: none;
+                } */
+  /* .siguiente {
+                   display: none;
+               } */
+}
+
+#container main #trending .content .lista .glider-track {
+  height: 300px;
+  border: 1px solid;
+}
+
+#container main #trending .content .lista .glider-track .gif {
+  width: 243px;
+  height: 300px;
+  position: relative;
+  margin: 32px 11px 82px;
+}
+
+#container main #trending .content .lista .glider-track .gif img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#container main #trending .content .lista .glider-track .gif .over {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(87, 46, 229, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .buttonGif {
+  display: none;
+  margin: 10px 10px 0 0;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .buttonGif .icon {
+  width: 32px;
+  height: 32px;
+  background: #FFF;
+  border-radius: 6px;
+  opacity: 0.7;
+  padding: 7px;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .buttonGif .icon:hover {
+  opacity: 1;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .buttonGif #fav:hover {
+  opacity: 1;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .infoGif {
+  display: none;
+  margin: 0 0 30px 13px;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .infoGif #user {
+  color: #FFF;
+  text-align: left;
+}
+
+#container main #trending .content .lista .glider-track .gif .over .infoGif #title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #FFF;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+#container main #trending .content .lista .glider-track .gif:hover .over {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#container main #trending .content .lista .glider-track .gif:hover .buttonGif {
+  display: block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+#container main #trending .content .lista .glider-track .gif:hover .infoGif {
+  display: block;
+  -ms-grid-column-align: self-end;
+      justify-self: self-end;
+  bottom: 0;
 }
 
 #container main #trending.dark {
@@ -298,8 +429,7 @@
 #container footer {
   background: #FFF;
   text-align: center;
-  border: 1px solid;
-  border-bottom: 5px solid #572ee5;
+  border-bottom: 5px solid #572EE5;
 }
 
 #container footer #p1 {
@@ -328,36 +458,37 @@
   color: #FFF;
 }
 
-@media screen and (min-width: 414px) {
-  #container header {
-    height: 95px;
+@media screen and (min-width: 768px) {
+  #container {
+    max-width: 1440px;
   }
   #container header nav {
-    height: 100%;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
   #container header nav .logo {
-    width: unset;
-    display: unset;
+    width: 50%;
+    padding-left: 10.8%;
   }
-  #container header nav .logo .boton {
+  #container header nav .logo #logoPpal {
+    content: url("../assets/icons/logo-desktop.svg");
+  }
+  #container header nav .logo #burger {
     display: none;
   }
-  #container header nav .menu {
-    width: unset;
-    padding: 0 1em;
-    display: inline-block;
+  #container header nav #menu {
+    width: 100%;
+    height: 90px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  #container header nav .menu ul {
+  #container header nav #menu ul {
+    width: 50%;
+    text-decoration: none;
+    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -365,64 +496,71 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  #container header nav #menu ul li {
+    list-style: none;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  #container header nav .menu ul li {
-    width: unset;
-    background: unset;
-    padding-left: 1em;
-  }
-  #container header nav .menu ul li a {
-    color: #572ee5;
-    font-size: 14px;
-    line-height: 17px;
+  #container header nav #menu ul li a {
+    color: #572EE5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
     letter-spacing: 0;
-    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
   }
-  #container main #inspirate img {
-    width: 32.7%;
-    height: 11.5%;
+  #container header nav #menu ul img {
+    border: 1px solid #572EE5;
+    border-radius: 50%;
+    padding: 20px;
   }
-}
-
-@media screen and (min-width: 768px) {
-  #container {
-    max-width: 1440px;
+  #container header nav #menu ul img:hover {
+    background: #572EE5;
+    cursor: pointer;
   }
-  #container header {
-    height: 90px;
+  #container header nav #menu.dark li {
+    background: #37383C;
   }
-  #container header nav .logo {
-    padding-left: 10.8%;
+  #container header nav #menu.dark li a {
+    color: #FFF;
   }
-  #container header nav .menu {
-    padding-right: 18.7%;
-  }
-  #container header nav .menu ul li {
-    padding-left: 45px;
+  #container header nav #menu.dark img:hover {
+    background: #FFF;
   }
   #container main #inspirate h1 {
-    border: 1px solid;
+    width: 40%;
     font-size: 35px;
     line-height: 50px;
     margin-top: 76px;
-    margin-left: 17.6%;
-    margin-right: 17.6%;
-    padding-left: 11.6%;
-    padding-right: 11.6%;
   }
-  #container main #inspirate img {
-    width: 27.7%;
-    height: 12.5%;
+  #container main #inspirate .ilustra {
+    width: 399px;
+    height: 190px;
     margin-top: 24px;
   }
-  #container main #inspirate input {
-    width: 38.3%;
+  #container main #inspirate .search {
+    width: 551px;
+    height: 50px;
+  }
+  #container main #inspirate .search input {
+    margin-left: 54px;
+  }
+  #container main #inspirate .search a {
+    margin-right: 20px;
   }
   #container main #inspirate h3 {
     margin-top: 73px;
@@ -433,20 +571,36 @@
     margin-top: 7px;
     margin-bottom: 95px;
   }
+  #container main #trending {
+    height: 640px;
+  }
   #container main #trending h2 {
-    margin-top: 67px;
+    padding-top: 67px;
   }
   #container main #trending h4 {
     font-size: 18px;
     line-height: 21px;
     margin-top: 12px;
   }
-  #container main #trending img {
-    width: 24.8%;
-    height: 18.1%;
-    margin-top: 53px;
+  #container main #trending .content {
+    width: 90%;
+    margin: auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    overflow: hidden;
+  }
+  #container main #trending .content .gif {
+    width: 357px;
+    height: 275px;
+    border: 1px solid;
+    margin: 53px 157px 182px;
+  }
+  #container main #trending .content .gif img {
+    width: 357px;
+    height: 275px;
   }
   #container footer {
+    height: 116px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -459,7 +613,7 @@
             justify-content: space-between;
   }
   #container footer .redes {
-    border: 1px solid;
+    width: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -470,8 +624,23 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #container footer .redes #p1 {
+    padding-top: unset;
+    font-size: 13px;
+    line-height: 15px;
+  }
+  #container footer .redes img {
+    padding-top: unset;
+    padding-left: 19px;
+  }
+  #container footer #p2 {
+    font-size: 13px;
+    line-height: 15px;
+    margin-right: 158px;
   }
 }
 

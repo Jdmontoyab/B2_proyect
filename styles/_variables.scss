@@ -2,7 +2,7 @@ $bgOne:#FFF;
 $bgTwo: #F3F5F8;
 $bgDark: #37383C;
 $bgDarkTwo: #222326;
-$colorPrimary: #572ee5;
+$colorPrimary: #572EE5;
 $colorSecundary:  #50E3C2;
 $colorBlack: #000;
 $borde: 1px solid;
@@ -26,8 +26,10 @@ $borde: 1px solid;
 %input {
     border: none;
     font-family: 'Roboto', sans-serif;
+    color: $colorBlack;
     font-size: 16px;
     line-height: 19px;
+    text-align: left;
 }
 
 %h2 {
@@ -65,12 +67,16 @@ $borde: 1px solid;
 
 %p1 {
     color: $colorBlack;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    line-height: 18px;
     letter-spacing: 0;
 }
 
 %p2 {
     color: $colorBlack;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0;

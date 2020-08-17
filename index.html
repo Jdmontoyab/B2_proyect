@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto GIFOS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <div id="container">
         <header class="light" id="header">
             <nav class="nav">
-                <div class="logo">
-                    <img src="./assets/icons/logo-mobile.svg" alt="logo_mobile">
+                <div class="logo light">
+                    <img id="logoPpal" src="./assets/icons/logo-mobile.svg" alt="logo_mobile">
                     <img id="burger" class="burger" src="./assets/icons/burger.svg" alt="burger">
                 </div>
-                <div class="menu light on" id="menu">
+                <div class="on light" id="menu">
                     <ul>
-                        <li><a href="javascript:switchTheme()">Modo Nocturno</a><span></span></li>
+                        <li><a id="mode" href="javascript:switchTheme()">Modo Nocturno</a><span></span></li>
                         <li><a href="">Favoritos</a><span></span></li>
                         <li><a href="">Mis GIFOS</a><span></span></li>
+                        <li><img src="./assets/icons/button-crear-gifo.svg" alt="add"></li>
                     </ul>
                 </div>
             </nav>
@@ -37,21 +39,35 @@
             <section id="trending" class="light">
                 <h2>Trending GIFOS</h2>
                 <h4>Mira los últimos GIFOS de nuestra comunidad.</h4>
-                <div class="content">
-                    
+                <div id="content" class="content">
+                    <button class="anterior">
+                        <img src="./assets/icons/button-left.svg" alt="prev">
+                    </button>
+                    <div id="lista" class="lista">
+                        <div class="gif">
+                            <img src="./assets/embed1_.png" alt="">
+                        </div>
+                        <div class="gif">
+                            <img src="./assets/embed1_.png" alt="">
+                        </div>
+                    </div>
+                    <button class="siguiente">
+                        <img src="./assets/icons/button-right.svg" alt="prev">
+                    </button>
                 </div>
             </section>
         </main>
         <footer class="light">
             <div class="redes">
                 <p id="p1">Compartir en:</p>
-                <a href=""><img src="./assets/icons/icon_facebook.svg" alt="facebook"></a>
-                <a href=""><img src="./assets/icons/icon-twitter.svg" alt="twitter"></a>
-                <a href=""><img src="./assets/icons/icon_instagram.svg" alt="instagram"></a>
+                <img src="./assets/icons/icon_facebook.svg" alt="facebook">
+                <img src="./assets/icons/icon-twitter.svg" alt="twitter">
+                <img src="./assets/icons/icon_instagram.svg" alt="instagram">
             </div>
             <p id="p2">© GIFOS 2020 All Rights Reserved.</p>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/jquery.min.js"></script>
 </body>

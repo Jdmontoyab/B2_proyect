@@ -1,11 +1,33 @@
+// Código para ejecutar el carousel
+
+window.addEventListener('load', function() {
+    new Glider(document.getElementById('lista'), {
+        slidestoShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        arrows: {
+            prev: '.anterior',
+            next: '.siguiente'
+        }
+    });
+});
+
 // Cambio de tema
 
 function switchTheme() {
     if (document.theme === 'dark') {
+        //let mode = document.getElementById('mode');
+        //mode.textContent = 'Modo Nocturno';
         replaceClass('dark', 'light');
     } else {
+        //let mode = document.getElementById('mode');
+        //mode.textContent = 'Modo Diurno';
         replaceClass('light', 'dark');
     }
+
+    //let menu = document.getElementById('menu');
+    //menu.style.display = 'none';
+    //changeIcon();
 }
 
 function replaceClass(oldClass, newClass) {
@@ -29,57 +51,60 @@ function changeIcon() {
         icon.alt = 'close';
         let menu = document.getElementById('menu');
         menu.classList.remove('on');
+        menu.classList.add('menu');
         i = 0;
+        menu.style.display = 'block';
     } else {
         i = 1;
         icon.src = "./assets/icons/burger.svg";
         icon.alt = 'burger';
         let menu = document.getElementById('menu');
+        menu.classList.remove('menu');
         menu.classList.add('on');
+        menu.style.display = 'none';
     }
 };
 
-/*class Gif {
-    constructor(nombre, autor, url, likes) {
-        this.nombre = nombre;
-        this.autor = autor;
-        this.url = url;
-        this.likes = likes;
-    }
-}
+// Conexión a API Giphy
 
-let gifs = [
-    new Gif('gato1', 'Pedro', 'https://media3.giphy.com/media/13CoXDiaCcCoyk/200.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=200.gif', 37),
-    new Gif('gato2', 'Ana', 'https://media3.giphy.com/media/CjmvTCZf2U3p09Cn0h/200.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=200.gif', 57),
-    new Gif('gato3', 'Marcela', 'https://media0.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=giphy.gif', 3),
-    new Gif('gato4', 'Johan', 'https://media2.giphy.com/media/12PA1eI8FBqEBa/giphy.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=giphy.gif', 264),
-    new Gif('gato5', 'Julian', 'https://media0.giphy.com/media/Nm8ZPAGOwZUQM/200.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=200.gif', 456),
-    new Gif('gato6', 'Carolina', 'src="https://media0.giphy.com/media/8hXXilmk33wtmAGJNu/giphy.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=giphy.gif"', 83)
-];
+/* let apiKey = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
 
-let contenedor = document.getElementsByClassName('content')[0];
+let url1 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=cats';
+let url2 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=glblctzn-one-world';
+let url3 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=glblctzn-global-citizen-one-world-together-at-home-f8t7FaLXN9RAcaANFn';
 
-for (let i = 0; i < gifs.length; i++) {
-    let gif = gifs[i];
+let gif1 = fetch(url1).then(res => res.json());
+let gif2 = fetch(url2).then(res => res.json());
+let gif3 = fetch(url3).then(res => res.json());
 
-    let hTres = document.createElement('h3');
-    hTres.textContent = gif.nombre;
+Promise.all([gif1, gif2, gif3]).then(gifs => {
+    console.log(gifs);
+    gifs.forEach(gif => {
+        createHtml(gif)
+    })
+}).catch(error => console.log(error)); */
 
-    let imagen = document.createElement('img');
-    imagen.src = gif.url;
-    imagen.alt = 'Error al cargar el gif'
+// Manejo de Gifs
 
-    let p = document.createElement('p');
-    p.innerText = gif.autor;
+/* let createHtml = gif => {
+    //let out = document.getElementById('lista');
+    let out = document.getElementsByClassName('glider-track')[0];
 
-    let span = document.createElement('span');
-    span.textContent = 'likes: ' + gif.likes;
-
-    let div = document.createElement('div');
-    div.appendChild(hTres);
-    div.appendChild(imagen);
-    div.appendChild(p);
-    div.appendChild(span);
-
-    contenedor.appendChild(div);
+    out.insertAdjacentHTML('beforeend',
+    `<div id="gif" class="gif">
+        <a onclick="#" style="cursor:pointer" title="Agregar a favorito"><img src="${gif.data[0].images.downsized.url}" alt="${gif.data[0].title}"></a>
+        
+    </div>`);
 } */
+
+{/* <div class="over">
+    <div class="buttonGif">
+        <img id="fav" class="icon" src='./assets/icons/icon-fav-hover.svg'>
+        <img id="dow" class="icon" src='./assets/icons/icon-download.svg'>
+        <img id="ful" class="icon" src='./assets/icons/icon-max.svg'>
+    </div>
+    <div class="infoGif">
+        <p id="user">${gif.data[0].user.username}</p>
+        <p id="title">${gif.data[0].title}</p>
+    </div>
+</div> */}

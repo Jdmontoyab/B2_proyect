@@ -23,6 +23,16 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
+
+                &.dark {
+                    #logoPpal {
+                        content: url('../assets/icons/logo-desktop-modo-noc.svg');
+                    }
+                }
+            }
+
+            .on {
+                display: none;
             }
 
             .menu {
@@ -30,7 +40,6 @@
                 height: 500px;
                 @extend %menu;
                 
-                display: flex;
                 flex-direction: column;
                 align-items: flex-start;
 
@@ -63,17 +72,16 @@
                             opacity: 0.5;
                         }
                     }
-                }
 
-                .dark {
-                    li {
-                        background: $colorBlack;
-                    
+                    img {
+                        display: none;
                     }
                 }
 
-                .on {
-                    display: none;
+                &.dark {
+                    li {
+                        background: $colorBlack;
+                    }
                 }
             }
         }

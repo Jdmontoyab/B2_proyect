@@ -1,0 +1,64 @@
+<div class="gif">
+                        <img src="./assets/embed1_.png" alt="">
+                        <div class="over">
+                            <div class="buttonGif">
+                                <img id="fav" class="icon" src='./assets/icons/icon-fav-hover.svg'>
+                                <img id="dow" class="icon" src='./assets/icons/icon-download.svg'>
+                                <img id="ful" class="icon" src='./assets/icons/icon-max.svg'>
+                            </div>
+                            <div class="infoGif">
+                                <p id="user">User</p>
+                                <p id="title">Título GIFO</p>
+                            </div>
+                        </div>
+                    </div>
+
+// Inicialmente en el JS del proyecto
+
+/* for (let i = 0; i < gifs.length; i++) {
+    
+} */
+
+//q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs Api Key
+
+/* let contenedor = document.getElementsByClassName('content')[0];
+
+for (let i = 0; i < gifs.length; i++) {
+    let gif = gifs[i];
+
+    let hTres = document.createElement('h3');
+    hTres.textContent = gif.nombre;
+
+    let imagen = document.createElement('img');
+    imagen.src = gif.url;
+    imagen.alt = 'Error al cargar el gif'
+
+    let p = document.createElement('p');
+    p.innerText = gif.autor;
+
+    let span = document.createElement('span');
+    span.textContent = 'likes: ' + gif.likes;
+
+    let div = document.createElement('div');
+    div.appendChild(hTres);
+    div.appendChild(imagen);
+    div.appendChild(p);
+    div.appendChild(span);
+
+    contenedor.appendChild(div);
+
+class Gif {
+    constructor(user, title, url, fav) {
+        this.user = user;
+        this.title = title;
+        this.url = url;
+        this.fav = fav;
+    }
+}
+
+let gifs = [
+    new Gif('gato1', 'Pedro', 'https://media3.giphy.com/media/13CoXDiaCcCoyk/200.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=200.gif', false),
+    new Gif('gato2', 'Ana', 'https://media3.giphy.com/media/CjmvTCZf2U3p09Cn0h/200.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=200.gif', false),
+    new Gif('gato3', 'Marcela', 'https://media0.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif?cid=ecf05e47rjs1zimdpmwmxw2nu4dd8oqh6ktbz636j3n8p0x7&rid=giphy.gif', false),
+];
+}  */

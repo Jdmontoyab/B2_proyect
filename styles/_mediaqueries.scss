@@ -1,99 +1,90 @@
-@media screen and (min-width: 414px) {
-    #container {
-        header {
-            height: 95px;
-            //top: 0;
-            //background: yellow;
-            //position: fixed;
-            //border: $borde;
-
-            nav {
-                //margin: auto;
-                height: 100%;
-                //border: $borde;
-
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-
-                .logo {
-                    width: unset;
-                    display: unset;
-                    //border: $borde;
-                    //padding: 0;
-
-                    .boton {
-                        display: none;
-                    }
-                }
-
-                .menu {
-                    width: unset;
-                    //border: $borde;
-                    padding: 0 1em;
-
-                    display: inline-block;
-                    
-
-                    ul {
-                        //width: 100%;
-                        //border: $borde;
-                        //text-align: center;
-
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items: center;
-
-                        li {
-                            width: unset;
-                            background: unset;
-                            padding-left: 1em;
-                            //text-align: center;
-
-                            a {
-                                color: $colorPrimary;
-                                font-size: 14px;
-                                line-height: 17px;
-                                letter-spacing: 0;
-                                text-transform: uppercase;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        main {
-            #inspirate {
-
-                img {
-                    width: 32.7%;
-                    height: 11.5%;
-                }
-            }
-        }
-    }
-}
-
 @media screen and (min-width: 768px) {
     #container {
         max-width: 1440px;
 
         header {
-            height: 90px;
+            //height: 90px;
 
             nav {
+                flex-direction: row;
+
                 .logo {
+                    width: 50%;
                     padding-left: 10.8%;
+                    //background: blue;
+                    //border: solid;
+
+                    #logoPpal {
+                        content: url('../assets/icons/logo-desktop.svg');
+                    }
+
+                    #burger {
+                        display: none;
+                    }
                 }
 
-                .menu {
-                    padding-right: 18.7%;
+                #menu {
+                    width: 100%;
+                    height: 90px;
+                    //background: yellow;
+                    //border: solid;
+
+                    display: flex;
 
                     ul {
+                        width: 50%;
+                        text-decoration: none;
+                        margin: auto;
+                        //border: solid;
+                        
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+    
                         li {
-                            padding-left: 45px;
+                            list-style: none;
+                            text-align: center;
+    
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+    
+                            a {
+                                color: $colorPrimary;
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: bold;
+                                font-size: 13px;
+                                line-height: 16px;
+                                letter-spacing: 0;
+                                text-align: center;
+                                text-decoration: none;
+                            }
+                        }
+
+                        img {
+                            border: 1px solid $colorPrimary;
+                            border-radius: 50%;
+                            padding: 20px;
+
+                            &:hover {
+                                background: $colorPrimary;
+                                //filter: invert(4.4) hue-rotate(1deg) saturate(1%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+    
+                    &.dark {
+                        li {
+                            background: $bgDark;
+
+                            a {
+                                color: $bgOne;
+                            }
+                        }
+
+                        img:hover {
+                            background: $bgOne;
                         }
                     }
                 }
@@ -103,25 +94,32 @@
         main {
             #inspirate {
                 h1 {
-                    border: $borde;
+                    width: 40%;
+                    //border: $borde;
                     font-size: 35px;
                     line-height: 50px;
                     margin-top: 76px;
-                    margin-left: 17.6%;
-                    margin-right: 17.6%;
-                    padding-left: 11.6%;
-                    padding-right: 11.6%;
-                    //padding: 5% 17.6% 0 17.6%;
                 }
 
-                img {
-                    width: 27.7%;
-                    height: 12.5%;
+                .ilustra {
+                    width: 399px;
+                    height: 190px;
                     margin-top: 24px;
                 }
 
-                input {
-                    width: 38.3%;
+                .search {
+                    width: 551px;
+                    height: 50px;
+
+                    input {
+                        margin-left: 54px;
+                        //border: $borde;
+                    }
+
+                    a {
+                        margin-right: 20px;
+                        //border: $borde;
+                    }
                 }
 
                 h3 {
@@ -137,8 +135,10 @@
             }
 
             #trending {
+                height: 640px;
+
                 h2 {
-                    margin-top: 67px;
+                    padding-top: 67px;
                 }
 
                 h4 {
@@ -147,26 +147,64 @@
                     margin-top: 12px;
                 }
 
-                img {
-                    width: 24.8%;
-                    height: 18.1%;
-                    margin-top: 53px;
+                .content {
+                    width: 90%;
+                    margin: auto;
+                    justify-content: space-around;
+                    overflow: hidden;
+
+                    .gif {
+                        width: 357px;
+                        height: 275px;
+                        border: $borde;
+                        margin: 53px 157px 182px;
+                        
+    
+                        img {
+                            width: 357px;
+                            height: 275px;
+                        }
+                    }
                 }
             }
         }
 
         footer {
+            height: 116px;
+
             display: flex;
             flex-direction: row;
             justify-content: space-between;
 
             .redes {
-                border: $borde;
+                width: 50%;
+                //height: 100%;
+                //padding: 50px;
+
+                //border: $borde;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 //align-items: center;
-                align-content: center;
+                align-items: center;
+
+                #p1 {
+                    padding-top: unset;
+                    font-size: 13px;
+                    line-height: 15px;
+                }
+
+                img {
+                    padding-top: unset;
+                    padding-left: 19px;
+                    //width: 20px;
+                }
+            }
+
+            #p2 {
+                font-size: 13px;
+                line-height: 15px;
+                margin-right: 158px;
             }
         }
     }
