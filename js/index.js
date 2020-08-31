@@ -1,33 +1,69 @@
-// Código para ejecutar el carousel
+const API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
 
-window.addEventListener('load', function() {
-    new Glider(document.getElementById('lista'), {
-        slidestoShow: 1,
-        slidesToScroll: 1,
-        draggable: true,
-        arrows: {
-            prev: '.anterior',
-            next: '.siguiente'
-        }
+let url = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=3`;
+
+async function getGifsInit(url) {
+    let response = await fetch(url);
+    let gifs = await response.json();
+    return gifs;
+}
+
+getGifsInit(url).then((gifsData) => {
+    console.log(gifsData);
+    gifsData.data.forEach(gifData => {
+        showInit(gifData);
     });
 });
 
-// Cambio de tema
+let out = document.getElementById('galery'); // Obtener el contenedor de los gifs //
+
+let showInit = (gifData) => {
+    //console.log(out);
+    out.insertAdjacentHTML('beforeend',
+    `<li class="item"><div id="gif" class="gif">
+            <img id="full" src="${gifData.images.preview_gif.url}" alt="${gifData.title}">
+            <div class="over" onclick="showFull('${gifData.images.preview_gif.url}','${gifData.username}','${gifData.title}')">
+                <div class="buttonGif">
+                    <img id="fav" class="icon" src='./assets/icons/icon-fav-hover.svg'>
+                    <img id="dow" class="icon" src='./assets/icons/icon-download.svg'>
+                    <img id="ful" class="icon" src='./assets/icons/icon-max-normal.svg'>
+                </div>
+                <div class="infoGif">
+                    <p id="user">${gifData.username}</p>
+                    <p id="hover-title">${gifData.title}</p>
+                </div>
+            </div>
+    </div></li>`);
+}
+
+// Versión Full //
+
+function showFull (url, user, title) {
+    //console.log(url);
+    let fullOver = document.getElementById('fOver');
+    let fullImg = document.getElementById('fullImg');
+    let fullUser = document.getElementById('pOne');
+    let fullTitle = document.getElementById('pTwo');
+    //console.log(fullImg);
+    fullOver.style.display = 'flex';
+    fullImg.src = url;
+    fullUser.textContent = user;
+    fullTitle.textContent = title;
+}
+
+// Cambio de tema //
+
+let mode = document.getElementById('mode');
 
 function switchTheme() {
     if (document.theme === 'dark') {
-        //let mode = document.getElementById('mode');
-        //mode.textContent = 'Modo Nocturno';
+        mode.textContent = 'Modo Nocturno';
         replaceClass('dark', 'light');
     } else {
-        //let mode = document.getElementById('mode');
-        //mode.textContent = 'Modo Diurno';
+        mode.textContent = 'Modo Diurno';
         replaceClass('light', 'dark');
     }
-
-    //let menu = document.getElementById('menu');
-    //menu.style.display = 'none';
-    //changeIcon();
+    changeIcon();
 }
 
 function replaceClass(oldClass, newClass) {
@@ -38,7 +74,7 @@ function replaceClass(oldClass, newClass) {
     }
 }
 
-// Menú desplegable
+// Menú desplegable //
 
 let icon = document.getElementById('burger');
 icon.addEventListener("click", changeIcon);
@@ -50,61 +86,13 @@ function changeIcon() {
         icon.src = "./assets/icons/close.svg";
         icon.alt = 'close';
         let menu = document.getElementById('menu');
-        menu.classList.remove('on');
-        menu.classList.add('menu');
-        i = 0;
         menu.style.display = 'block';
+        i = 0;
     } else {
         i = 1;
         icon.src = "./assets/icons/burger.svg";
         icon.alt = 'burger';
         let menu = document.getElementById('menu');
-        menu.classList.remove('menu');
-        menu.classList.add('on');
         menu.style.display = 'none';
     }
 };
-
-// Conexión a API Giphy
-
-/* let apiKey = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
-
-let url1 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=cats';
-let url2 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=glblctzn-one-world';
-let url3 = 'https://api.giphy.com/v1/gifs/search?api_key=q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs&limit=1&q=glblctzn-global-citizen-one-world-together-at-home-f8t7FaLXN9RAcaANFn';
-
-let gif1 = fetch(url1).then(res => res.json());
-let gif2 = fetch(url2).then(res => res.json());
-let gif3 = fetch(url3).then(res => res.json());
-
-Promise.all([gif1, gif2, gif3]).then(gifs => {
-    console.log(gifs);
-    gifs.forEach(gif => {
-        createHtml(gif)
-    })
-}).catch(error => console.log(error)); */
-
-// Manejo de Gifs
-
-/* let createHtml = gif => {
-    //let out = document.getElementById('lista');
-    let out = document.getElementsByClassName('glider-track')[0];
-
-    out.insertAdjacentHTML('beforeend',
-    `<div id="gif" class="gif">
-        <a onclick="#" style="cursor:pointer" title="Agregar a favorito"><img src="${gif.data[0].images.downsized.url}" alt="${gif.data[0].title}"></a>
-        
-    </div>`);
-} */
-
-{/* <div class="over">
-    <div class="buttonGif">
-        <img id="fav" class="icon" src='./assets/icons/icon-fav-hover.svg'>
-        <img id="dow" class="icon" src='./assets/icons/icon-download.svg'>
-        <img id="ful" class="icon" src='./assets/icons/icon-max.svg'>
-    </div>
-    <div class="infoGif">
-        <p id="user">${gif.data[0].user.username}</p>
-        <p id="title">${gif.data[0].title}</p>
-    </div>
-</div> */}

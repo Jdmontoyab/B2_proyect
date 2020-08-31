@@ -33,7 +33,7 @@
   text-align: left;
 }
 
-#container main #trending h2 {
+#container main #inspirate #group-results #title, #container main #trending h2 {
   color: #572EE5;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .infoGif #user, #container footer #p1 {
+#container main #inspirate #group-results .results .gif .over .infoGif #user, #container footer #p1 {
   color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -138,13 +138,7 @@
 #container header nav .menu {
   width: 100%;
   height: 500px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  display: none;
 }
 
 #container header nav .menu ul {
@@ -210,6 +204,49 @@
           align-items: center;
 }
 
+#container main #inspirate.dark {
+  background: #37383C;
+}
+
+#container main #inspirate.dark h1 {
+  color: #FFF;
+}
+
+#container main #inspirate.dark .search {
+  border-color: #FFF;
+}
+
+#container main #inspirate.dark .search input {
+  background-color: #37383C;
+}
+
+#container main #inspirate.dark h3 {
+  color: #FFF;
+}
+
+#container main #inspirate.dark p {
+  color: #FFF;
+}
+
+#container main #inspirate.dark #group-results #span {
+  color: #FFF;
+}
+
+#container main #inspirate.dark #group-results #title {
+  color: #FFF;
+}
+
+#container main #inspirate.dark #group-results #see {
+  background: #37383C;
+  color: #FFF;
+  border-color: #FFF;
+}
+
+#container main #inspirate.dark #group-results #see:hover {
+  background: #FFF;
+  color: #000;
+}
+
 #container main #inspirate h1 {
   margin-top: 7px;
 }
@@ -244,6 +281,10 @@
   margin-left: 55px;
 }
 
+#container main #inspirate .search input.dark {
+  color: #FFF;
+}
+
 #container main #inspirate .search a {
   width: 20px;
   height: 20px;
@@ -263,78 +304,71 @@
   margin: 2px 75px 45px;
 }
 
-#container main #inspirate.dark {
-  background: #37383C;
+#container main #inspirate #group-results {
+  width: 100%;
 }
 
-#container main #inspirate.dark h1 {
-  color: #FFF;
+#container main #inspirate #group-results #span {
+  width: 157px;
+  border: 1px solid #9CAFC3;
+  opacity: 0.5;
+  margin: auto;
+  display: none;
 }
 
-#container main #inspirate.dark .search {
-  border-color: #FFF;
+#container main #inspirate #group-results #title {
+  display: none;
+  margin: 43px 0 38px;
+  line-height: 40px;
 }
 
-#container main #inspirate.dark .search input {
-  background-color: #37383C;
-}
-
-#container main #inspirate.dark h3 {
-  color: #FFF;
-}
-
-#container main #trending {
-  height: 430px;
-  background: #F3F5F8;
-}
-
-#container main #trending h2 {
-  padding-top: 46px;
-}
-
-#container main #trending h4 {
-  margin-top: 7px;
-}
-
-#container main #trending .content {
+#container main #inspirate #group-results .not {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  /* .anterior {
-                    display: none;
-                } */
-  /* .siguiente {
-                   display: none;
-               } */
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
-#container main #trending .content .lista .glider-track {
-  height: 300px;
-  border: 1px solid;
+#container main #inspirate #group-results .not .notResults {
+  margin: 17px 0 19px;
 }
 
-#container main #trending .content .lista .glider-track .gif {
-  width: 243px;
-  height: 300px;
+#container main #inspirate #group-results .not #notResults {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 18px;
+  margin-top: 19px;
+  margin-bottom: 62px;
+}
+
+#container main #inspirate #group-results .results {
+  height: 0;
+  margin: 0 21px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;
+  gap: 21px 21px;
+}
+
+#container main #inspirate #group-results .results .gif {
+  width: 156px;
+  height: 120px;
   position: relative;
-  margin: 32px 11px 82px;
 }
 
-#container main #trending .content .lista .glider-track .gif img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-#container main #trending .content .lista .glider-track .gif .over {
+#container main #inspirate #group-results .results .gif .over {
   width: 0;
   height: 0;
   position: absolute;
@@ -353,65 +387,304 @@
           justify-content: space-between;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .buttonGif {
+#container main #inspirate #group-results .results .gif .over .buttonGif {
   display: none;
-  margin: 10px 10px 0 0;
+  margin: 5px 5px 0 0;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .buttonGif .icon {
-  width: 32px;
-  height: 32px;
+#container main #inspirate #group-results .results .gif .over .buttonGif .icon {
+  width: 24px;
+  height: 24px;
   background: #FFF;
   border-radius: 6px;
   opacity: 0.7;
-  padding: 7px;
+  padding: 4px;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .buttonGif .icon:hover {
+#container main #inspirate #group-results .results .gif .over .buttonGif .icon:hover {
   opacity: 1;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .buttonGif #fav:hover {
+#container main #inspirate #group-results .results .gif .over .buttonGif #fav:hover {
   opacity: 1;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .infoGif {
+#container main #inspirate #group-results .results .gif .over .infoGif {
   display: none;
-  margin: 0 0 30px 13px;
+  margin: 0 0 5px 5px;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .infoGif #user {
+#container main #inspirate #group-results .results .gif .over .infoGif #user {
+  font-size: 10px;
+  line-height: 12px;
   color: #FFF;
   text-align: left;
+  margin: 0;
 }
 
-#container main #trending .content .lista .glider-track .gif .over .infoGif #title {
+#container main #inspirate #group-results .results .gif .over .infoGif #hover-title {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #FFF;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 10px;
+  line-height: 12px;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 3px;
+  display: block;
 }
 
-#container main #trending .content .lista .glider-track .gif:hover .over {
+#container main #inspirate #group-results .results .gif:hover .over {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
 
-#container main #trending .content .lista .glider-track .gif:hover .buttonGif {
+#container main #inspirate #group-results .results .gif:hover .buttonGif {
   display: block;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-#container main #trending .content .lista .glider-track .gif:hover .infoGif {
+#container main #inspirate #group-results .results .gif:hover .infoGif {
   display: block;
   -ms-grid-column-align: self-end;
       justify-self: self-end;
   bottom: 0;
+}
+
+#container main #inspirate #group-results .results img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#container main #inspirate #group-results #see {
+  display: none;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  background: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #572EE5;
+  text-align: center;
+  margin: 78px auto 79px;
+  padding: 16px 32px;
+}
+
+#container main #inspirate #group-results #see:hover {
+  background: #572EE5;
+  color: #FFF;
+}
+
+#container main #inspirate #logoMis {
+  margin-top: 10px;
+  width: 24px;
+  height: 22px;
+}
+
+#container main #inspirate #titleMis {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 8px;
+}
+
+#container main #inspirate #logoSin {
+  width: 150px;
+  height: 150px;
+  margin-top: 111px;
+}
+
+#container main #inspirate #titleAni {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #50E3C2;
+  text-align: center;
+  line-height: 20px;
+  margin: 40px 0 136px;
+}
+
+#container main #inspirate #contPpal {
+  width: 100%;
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#container main #inspirate #contOne {
+  border: solid;
+  /* img {
+                    border: solid;
+                } */
+}
+
+#container main #inspirate #contTwo {
+  height: 100%;
+}
+
+#container main #inspirate #contTwo #grabar {
+  width: 688px;
+  height: 390px;
+  border: 1px solid #572EE5;
+}
+
+#container main #inspirate #contThree {
+  border: solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  /*  #logoCam {
+                    align-self: end;
+                } */
+}
+
+#container main #trending {
+  background: #F3F5F8;
+  overflow: hidden;
+}
+
+#container main #trending h2 {
+  padding-top: 46px;
+}
+
+#container main #trending h4 {
+  margin-top: 7px;
+}
+
+#container main #trending .content {
+  padding: 0 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #trending .content #prev, #container main #trending .content #next {
+  display: none;
+}
+
+#container main #trending .content ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#container main #trending .content ul li {
+  list-style: none;
+}
+
+#container main #trending .content ul li .gif {
+  width: 243px;
+  height: 187px;
+  position: relative;
+  margin: 32px 11px 82px;
+}
+
+#container main #trending .content ul li .gif img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#container main #trending .content ul li .gif .over {
+  display: none;
+}
+
+#container main #trending .content .fullOver {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.9);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 29px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#container main #trending .content .fullOver a {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 64px;
+}
+
+#container main #trending .content .fullOver #fullImg {
+  width: 318px;
+  height: 245px;
+  margin-top: 78px;
+}
+
+#container main #trending .content .fullOver #base {
+  margin-top: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #trending .content .fullOver #base #pOne {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000000;
+  text-align: left;
+}
+
+#container main #trending .content .fullOver #base #pTwo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  text-align: left;
+  margin-top: 6px;
+}
+
+#container main #trending .content .fullOver #base img {
+  width: 36px;
+  height: 36px;
+  margin-left: 29px;
+  opacity: 0.5;
+  border: 1px solid #9CAFC3;
+  border-radius: 6px;
+  padding: 6px;
 }
 
 #container main #trending.dark {
@@ -462,6 +735,9 @@
   #container {
     max-width: 1440px;
   }
+  #container header {
+    max-width: 1440px;
+  }
   #container header nav {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -478,16 +754,15 @@
   #container header nav .logo #burger {
     display: none;
   }
-  #container header nav #menu {
+  #container header nav .menu {
     width: 100%;
     height: 90px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  #container header nav #menu ul {
+  #container header nav .menu ul {
     width: 50%;
-    text-decoration: none;
     margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -499,12 +774,9 @@
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  #container header nav #menu ul li {
-    list-style: none;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  #container header nav .menu ul li {
+    width: unset;
+    background: unset;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -513,7 +785,10 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  #container header nav #menu ul li a {
+  #container header nav .menu ul li:last-child {
+    padding-bottom: 0;
+  }
+  #container header nav .menu ul li a {
     color: #572EE5;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
@@ -523,22 +798,28 @@
     text-align: center;
     text-decoration: none;
   }
-  #container header nav #menu ul img {
-    border: 1px solid #572EE5;
-    border-radius: 50%;
-    padding: 20px;
+  #container header nav .menu ul li span {
+    display: none;
   }
-  #container header nav #menu ul img:hover {
-    background: #572EE5;
+  #container header nav .menu ul img {
+    display: block;
+  }
+  #container header nav .menu ul img:hover {
     cursor: pointer;
   }
-  #container header nav #menu.dark li {
+  #container header nav .menu.dark {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 16px auto;
+  }
+  #container header nav .menu.dark li {
     background: #37383C;
   }
-  #container header nav #menu.dark li a {
+  #container header nav .menu.dark li a {
     color: #FFF;
   }
-  #container header nav #menu.dark img:hover {
+  #container header nav .menu.dark img:hover {
     background: #FFF;
   }
   #container main #inspirate h1 {
@@ -569,10 +850,39 @@
   #container main #inspirate p {
     font-size: 16px;
     margin-top: 7px;
-    margin-bottom: 95px;
+    margin-bottom: 37px;
   }
-  #container main #trending {
-    height: 640px;
+  #container main #inspirate #group-results #span {
+    width: 338px;
+    margin-top: 58px;
+  }
+  #container main #inspirate #group-results #title {
+    margin: 55px 0 82px;
+    font-size: 35px;
+    line-height: 30px;
+  }
+  #container main #inspirate #group-results .not .notResults {
+    margin: 27px 0 29px;
+  }
+  #container main #inspirate #group-results .not #notResults {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: #50E3C2;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 29px;
+    margin-bottom: 112px;
+  }
+  #container main #inspirate #group-results .results {
+    margin: 0 157px;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 29px 29px;
+  }
+  #container main #inspirate #group-results .results .gif {
+    width: 260px;
+    height: 200px;
   }
   #container main #trending h2 {
     padding-top: 67px;
@@ -583,21 +893,131 @@
     margin-top: 12px;
   }
   #container main #trending .content {
-    width: 90%;
+    position: relative;
     margin: auto;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     overflow: hidden;
   }
-  #container main #trending .content .gif {
-    width: 357px;
-    height: 275px;
-    border: 1px solid;
-    margin: 53px 157px 182px;
+  #container main #trending .content #prev, #container main #trending .content #next {
+    width: 40px;
+    height: 40px;
+    display: block;
   }
-  #container main #trending .content .gif img {
+  #container main #trending .content #prev:hover, #container main #trending .content #next:hover {
+    background: #572EE5;
+    cursor: pointer;
+  }
+  #container main #trending .content ul li {
+    /* display: none;
+
+                            &:first-child {
+                                display: block;
+                            } */
+  }
+  #container main #trending .content ul li .gif {
     width: 357px;
     height: 275px;
+    position: relative;
+    margin-top: 53px;
+  }
+  #container main #trending .content ul li .gif .over {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(87, 46, 229, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #container main #trending .content ul li .gif .over .buttonGif {
+    display: none;
+    margin: 10px 10px 0 0;
+  }
+  #container main #trending .content ul li .gif .over .buttonGif .icon {
+    width: 32px;
+    height: 32px;
+    background: #FFF;
+    border-radius: 6px;
+    opacity: 0.7;
+    padding: 7px;
+  }
+  #container main #trending .content ul li .gif .over .buttonGif .icon:hover {
+    opacity: 1;
+  }
+  #container main #trending .content ul li .gif .over .buttonGif #fav:hover {
+    opacity: 1;
+  }
+  #container main #trending .content ul li .gif .over .infoGif {
+    display: none;
+    margin: 0 0 30px 13px;
+  }
+  #container main #trending .content ul li .gif .over .infoGif #user {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFF;
+    text-align: left;
+  }
+  #container main #trending .content ul li .gif .over .infoGif #hover-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: left;
+    margin-top: 5px;
+  }
+  #container main #trending .content ul li .gif:hover .over {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  #container main #trending .content ul li .gif:hover .over .buttonGif {
+    display: block;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  #container main #trending .content ul li .gif:hover .over .infoGif {
+    display: block;
+    -ms-grid-column-align: self-end;
+        justify-self: self-end;
+    bottom: 0;
+  }
+  #container main #trending .content .fullOver {
+    background: #FFF;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #container main #trending .content .fullOver a {
+    margin-top: 66px;
+    margin-right: 278px;
+  }
+  #container main #trending .content .fullOver #fullImg {
+    width: 695px;
+    height: 385px;
+    margin-top: 160px;
+  }
+  #container main #trending .content .fullOver #base {
+    width: 695px;
+    margin-top: 27px;
   }
   #container footer {
     height: 116px;
@@ -647,5 +1067,18 @@
 #container {
   width: 100%;
   padding-top: 95px;
+}
+
+.button-normal {
+  background: #FFF;
+  border: 1px solid #572EE5;
+}
+
+.button-hover {
+  background: #572EE5;
+}
+
+.button-active {
+  background: #9CAFC3;
 }
 /*# sourceMappingURL=style.css.map */

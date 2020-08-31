@@ -39,9 +39,10 @@
                 width: 100%;
                 height: 500px;
                 @extend %menu;
-                
-                flex-direction: column;
-                align-items: flex-start;
+
+                display: none;
+                //flex-direction: column;
+                //align-items: flex-start;
 
                 ul {
                     width: 100%;

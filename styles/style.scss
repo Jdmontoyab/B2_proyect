@@ -25,3 +25,16 @@
     //border: solid;
 }
 
+.button-normal {
+    background: $bgOne;
+    border: 1px solid $colorPrimary;
+}
+
+.button-hover {
+    background: $colorPrimary;
+}
+
+.button-active {
+    background: $colorActive;
+}
+
