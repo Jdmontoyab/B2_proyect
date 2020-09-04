@@ -29,7 +29,6 @@
                     //background: yellow;
                     //border: solid;
 
-                    
                     display: flex;
 
                     ul {
@@ -76,16 +75,28 @@
                             display: block;
 
                             &:hover {
-                                //background: $colorPrimary;
-                                //filter: invert(4.4) hue-rotate(1deg) saturate(1%);
+                                content: url('../assets/icons/CTA-crear-gifo-hover.svg');
                                 cursor: pointer;
+                            }
+
+                            &:active {
+                                content: url('../assets/icons/CTA-crear-gifo-active.svg');
+                            }
+
+                            &.dark {
+                                content: url('../assets/icons/CTA-crear-gifo-modo-noc.svg');
+
+                                &:hover {
+                                    background: $bgDark;
+                                    content: url('../assets/icons/CTA-crear-gifo-hover-modo-noc.svg');
+                                }
                             }
                         }
                     }
     
                     &.dark {
-                        display: flex;
-                        margin: 16px auto;
+                        //display: flex;
+                        //margin: 16px auto;
 
                         li {
                             background: $bgDark;
@@ -105,6 +116,8 @@
 
         main {
             #inspirate {
+                //border: solid;
+
                 h1 {
                     width: 40%;
                     //border: $borde;
@@ -145,20 +158,20 @@
                     margin-bottom: 37px;
                 }
 
-                #group-results {
-                    #span {
+                
+                #span {
                         width: 338px;
                         margin-top: 58px;
-                    }
+                }
 
-                    #title {
+                #title {
                         //display: none;
                         margin: 55px 0 82px;
                         font-size: 35px;
                         line-height: 30px;
-                    }
+                }
 
-                    .not {
+                .not {
                         //border: solid;
     
                         .notResults {
@@ -175,11 +188,11 @@
                             margin-top: 29px;
                             margin-bottom: 112px;
                         }
-                    }
+                }
 
-                    .results {
-                        margin: 0 157px;
-                        //background: red;
+                .results {
+                        margin: 36px 157px;
+                        height: auto;
     
                         grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
                         gap: 29px 29px;
@@ -187,8 +200,100 @@
                         .gif {
                             width: 260px;
                             height: 200px;
+
+                            .over {
+                                width: 0;
+                                height: 0;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                background: rgba($colorPrimary, 0.7);
+                                        
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+        
+                                .buttonGif {
+                                    display: none;
+                                    flex-direction: row;
+                                    justify-content: flex-end;
+                                    margin: 5px;
+                    
+                                    .icon {
+                                        width: 24px;
+                                        height: 24px;
+                                        cursor: pointer;
+                                        margin-left: 10px;
+                                        opacity: 0.7;
+
+                                        &:hover {
+                                            opacity: unset;
+                                        }
+                                    }
+
+                                    .no-favorito{
+                                        background: url('../assets/icons/icon-fav.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+
+                                    .favorito {
+                                        background: url('../assets/icons/icon-fav-active.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+        
+                                    .descarga {
+                                        background: url('../assets/icons/icon-download.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+        
+                                    .full {
+                                        background: url('../assets/icons/icon-max-normal.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+                                }
+                    
+                                .infoGif {
+                                    display: none;
+                                    flex-direction: column;
+                                    margin: 0 0 5px 5px;
+                    
+                                    #user {
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        color: $bgOne;
+                                        text-align: left;
+                                        margin-left: 5px;
+                                        margin-bottom: 5px;
+                                    }
+                    
+                                    #title {
+                                        font-family: 'Roboto', sans-serif;
+                                        font-weight: bold;
+                                        color: $bgOne;
+                                        font-size: 10px;
+                                        line-height: 12px;
+                                        text-align: left;
+                                        margin-top: 3px;
+                                        margin-left: 5px;
+                                        margin-bottom: 5px;
+        
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                .over {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    .buttonGif, .infoGif {
+                                        display: flex;
+                                    }
+                                }
+                            }
                         }
-                    }
+
                 }
             }
 
@@ -219,138 +324,202 @@
                         //border: 1px solid $colorPrimary;
                         
                         &:hover {
-                            background: $colorPrimary;
+                            //background: $colorPrimary;
                             cursor: pointer;
+                            
                         }
                     }
 
-                    ul {
-                        li {
-                            /* display: none;
+                        #prev {
+                            &:hover {
+                                content: url('../assets/icons/button-slider-left-hover.svg');
+                            }
 
-                            &:first-child {
-                                display: block;
-                            } */
+                            &.dark {
+                                content: url('../assets/icons/button-slider-left-md-noct.svg');
+                            }
+                        }
 
-                            .gif {
-                                width: 357px;
-                                height: 275px;
-                                position: relative;
+                        #next {
+                            &:hover {
+                                content: url('../assets/icons/button-slider-right-hover.svg');
+                            }
+
+                            &.dark {
+                                content: url('../assets/icons/button-slider-right-md-noct.svg');
+                            }
+                        }
+
+                    #galery {                   
+                        .gif {
+                            width: 357px;
+                            height: 275px;
+                            position: relative;
                                 
-                                //border: $borde;
-                                margin-top: 53px;
+                            //border: $borde;
+                            margin-top: 53px;
 
-                                .over {
-                                    width: 0;
-                                    height: 0;
-                                    position: absolute;
-                                    //overflow: hidden;
-                                    left: 0;
-                                    bottom: 0;
-                                    background: rgba($colorPrimary, 0.7);
-                                               
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: space-between;;
-                
-                                    .buttonGif {
-                                        display: none;
-                                        margin: 10px 10px 0 0;
-                                        //border: 1px solid;
-                            
-                                        .icon {
-                                            width: 32px;
-                                            height: 32px;
-                                            background: $bgOne;
-                                            border-radius: 6px;
-                                            opacity: 0.7;
-                                            padding: 7px;
-                                                
-                                            &:hover {
-                                                opacity: 1;
-                                            }
-                                        }
-                
-                                        #fav {
-                                            &:hover {
-                                                opacity: 1;
-                                                //content: url(./assets/icons/icon-fav-active.svg);
-                                            }
-                                        }
-                                    }
-                            
-                                    .infoGif {
-                                        display: none;
-                                        margin: 0 0 30px 13px;
-                                        //border: $borde;
-                            
-                                        #user {
-                                            font-family: 'Roboto', sans-serif;
-                                            font-size: 16px;
-                                            line-height: 19px;
-                                            color: $bgOne;
-                                            text-align: left;
-                                        }
-                            
-                                        #hover-title {
-                                            font-family: 'Roboto', sans-serif;
-                                            font-weight: bold;
-                                            color: $bgOne;
-                                            font-size: 16px;
-                                            line-height: 19px;
-                                            text-align: left;
-                                            margin-top: 5px;
-                                        }
-                                    }
-                                } 
+                            .over {
+                                width: 0;
+                                height: 0;
+                                position: absolute;
+                                //overflow: hidden;
+                                left: 0;
+                                bottom: 0;
+                                background: rgba($colorPrimary, 0.7);
+                                           
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
 
-                                &:hover {
-                                    .over {
-                                        width: 100%;
-                                        height: 100%;
-                                        cursor: pointer;
-                                        //border: solid;
-
-                                        .buttonGif {
-                                            display: block;
-                                            align-self: flex-end;
-                                        }
+                                .buttonGif {
+                                    //border: solid;
         
-                                        .infoGif {
-                                            display: block;
-                                            //align-self: flex-start;
-                                            justify-self: self-end;
-                                            bottom: 0;
+                                    display: none;
+                                    flex-direction: row;
+                                    justify-content: flex-end;
+                                    margin: 10px;
+
+                                    .icon {
+                                        width: 32px;
+                                        height: 32px;
+                                        cursor: pointer;
+                                        margin-left: 10px;
+                                        opacity: 0.7;
+
+                                        &:hover {
+                                            opacity: unset;
                                         }
                                     }
-                                } 
-                            } 
-                        } 
-                    }
+        
+                                    .no-favorito{
+                                        background: url('../assets/icons/icon-fav.svg') no-repeat;
+                                        background-size: contain;
+                                    }
 
-                    .fullOver {
-                        background: $bgOne;
-                        align-items: center;
-                        justify-content: center;
+                                    .favorito {
+                                        background: url('../assets/icons/icon-fav-active.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+        
+                                    .descarga {
+                                        background: url('../assets/icons/icon-download.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+        
+                                    .full {
+                                        background: url('../assets/icons/icon-max-normal.svg') no-repeat;
+                                        background-size: contain;
+                                    }
+                                }
+        
+                                .infoGif {
+                                    display: none;
+                                    flex-direction: column;
+                                    //border: solid;
+                                    margin: 0 0 51px 18px;
+                                    //border: $borde;
                         
-                        a {
-                            margin-top: 66px;
-                            margin-right: 278px;
-                        }
+                                    #user {
+                                        font-family: 'Roboto', sans-serif;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        color: $bgOne;
+                                        text-align: left;
+                                    }
+                        
+                                    #title {
+                                        font-family: 'Roboto', sans-serif;
+                                        font-weight: bold;
+                                        color: $bgOne;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        text-align: left;
+                                        margin-top: 5px;
+                                    }
+                                }
+                            }
 
-                        #fullImg {
-                            width: 695px;
-                            height: 385px;
-                            margin-top: 160px;
-                        }
+                            &:hover {
+                                .over {
+                                    width: 100%;
+                                    height: 100%;
 
-                        #base {
-                            //border: solid;
-                            width: 695px;
-                            margin-top: 27px;
+                                    .buttonGif, .infoGif {
+                                        display: flex;
+                                    }
+                                }
+                            }
                         }
                     }
                 }    
+            }
+
+            .fullOver {
+                background: $bgOne;
+                align-items: center;
+                justify-content: center;
+    
+                .close {
+                    margin-top: 66px;
+                    margin-right: 278px;
+                }
+    
+                .img-full {
+                    width: 695px;
+                    height: 385px;
+                    margin-top: 160px;
+                }
+    
+                .base {
+                    width: 695px;
+                    margin-top: 27px;
+    
+                    #string {
+                        #pOne {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 15px;
+                            line-height: 18px;
+                            color: $colorBlack;
+                            text-align: left;
+                        }
+    
+                        #pTwo {
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: $colorBlack;
+                            text-align: left;
+                            margin-top: 6px;
+                        }
+                    }
+    
+                    #options {
+                        display: flex;
+                        flex-flow: row wrap;
+    
+                        .icon-full {
+                            width: 36px;
+                            height: 36px;
+                            margin-left: 29px;
+                            opacity: 0.5;
+                            //border: 1px solid $colorSecundary;
+                            //border-radius: 6px;
+                            //padding: 6px;
+                            cursor: pointer;
+                        }
+    
+                        #fav {
+                            background: url('../assets/icons/icon-favoritos.svg') no-repeat;
+                            background-size: contain;
+                        }
+    
+                        #down {
+                            background: url('../assets/icons/icon-download.svg') no-repeat;
+                            background-size: contain;
+                        } 
+                    }
+                }
             }
         }
         

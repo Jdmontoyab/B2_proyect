@@ -1,6 +1,8 @@
 let clearGifos = () => {
+    //location.reload();
     document.getElementById('inspirate').innerHTML = '';
     let container = document.getElementById('inspirate');
+    container.classList.remove('crearGifos');
     changeIcon();
     misGifos(container);
 }
@@ -20,3 +22,4 @@ const misGifos = (container) => {
             <a href="javascript:showFull('${gif.images.preview_gif.url}','${gif.username}','${gif.title}')"><img id="response" src="${gif.images.preview_gif.url}" alt="${gif.title}"></a>
             
         </div>`); */
+

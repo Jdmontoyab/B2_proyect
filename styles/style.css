@@ -33,7 +33,7 @@
   text-align: left;
 }
 
-#container main #inspirate #group-results #title, #container main #trending h2 {
+#container main #inspirate #title, #container main #trending h2 {
   color: #572EE5;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-#container main #inspirate #group-results .results .gif .over .infoGif #user, #container footer #p1 {
+#container footer #p1 {
   color: #000;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -127,8 +127,26 @@
           align-items: center;
 }
 
+#container header nav .logo .burger {
+  width: 15px;
+  height: 15px;
+  background: url("../assets/icons/burger.svg") no-repeat;
+}
+
+#container header nav .logo .burgerAct {
+  background: url("../assets/icons/close.svg") no-repeat;
+}
+
 #container header nav .logo.dark #logoPpal {
-  content: url("../assets/icons/logo-desktop-modo-noc.svg");
+  content: url("../assets/icons/logo-mobile-modo-noct.svg");
+}
+
+#container header nav .logo.dark .burger {
+  background: url("../assets/icons/burger-modo-noct.svg") no-repeat;
+}
+
+#container header nav .logo.dark .burgerAct {
+  background: url("../assets/icons/close-modo-noct.svg") no-repeat;
 }
 
 #container header nav .on {
@@ -138,7 +156,6 @@
 #container header nav .menu {
   width: 100%;
   height: 500px;
-  display: none;
 }
 
 #container header nav .menu ul {
@@ -204,6 +221,22 @@
           align-items: center;
 }
 
+#container main #inspirate.crearGifos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #container main #inspirate.dark {
   background: #37383C;
 }
@@ -245,6 +278,14 @@
 #container main #inspirate.dark #group-results #see:hover {
   background: #FFF;
   color: #000;
+}
+
+#container main #inspirate .iconFav {
+  display: none;
+}
+
+#container main #inspirate .iconSinFav {
+  display: block;
 }
 
 #container main #inspirate h1 {
@@ -304,11 +345,7 @@
   margin: 2px 75px 45px;
 }
 
-#container main #inspirate #group-results {
-  width: 100%;
-}
-
-#container main #inspirate #group-results #span {
+#container main #inspirate #span {
   width: 157px;
   border: 1px solid #9CAFC3;
   opacity: 0.5;
@@ -316,13 +353,13 @@
   display: none;
 }
 
-#container main #inspirate #group-results #title {
+#container main #inspirate #title {
   display: none;
   margin: 43px 0 38px;
   line-height: 40px;
 }
 
-#container main #inspirate #group-results .not {
+#container main #inspirate .not {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -337,11 +374,11 @@
       align-content: center;
 }
 
-#container main #inspirate #group-results .not .notResults {
+#container main #inspirate .not .notResults {
   margin: 17px 0 19px;
 }
 
-#container main #inspirate #group-results .not #notResults {
+#container main #inspirate .not #notResults {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #50E3C2;
@@ -351,9 +388,10 @@
   margin-bottom: 62px;
 }
 
-#container main #inspirate #group-results .results {
-  height: 0;
-  margin: 0 21px;
+#container main #inspirate .results {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -362,104 +400,37 @@
   gap: 21px 21px;
 }
 
-#container main #inspirate #group-results .results .gif {
+#container main #inspirate .results .gif {
   width: 156px;
   height: 120px;
   position: relative;
 }
 
-#container main #inspirate #group-results .results .gif .over {
-  width: 0;
-  height: 0;
+#container main #inspirate .results .gif .over {
+  display: none;
+  width: 100%;
+  height: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
-  background: rgba(87, 46, 229, 0.7);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-#container main #inspirate #group-results .results .gif .over .buttonGif {
+#container main #inspirate .results .gif .over .buttonGif {
   display: none;
-  margin: 5px 5px 0 0;
 }
 
-#container main #inspirate #group-results .results .gif .over .buttonGif .icon {
-  width: 24px;
-  height: 24px;
-  background: #FFF;
-  border-radius: 6px;
-  opacity: 0.7;
-  padding: 4px;
-}
-
-#container main #inspirate #group-results .results .gif .over .buttonGif .icon:hover {
-  opacity: 1;
-}
-
-#container main #inspirate #group-results .results .gif .over .buttonGif #fav:hover {
-  opacity: 1;
-}
-
-#container main #inspirate #group-results .results .gif .over .infoGif {
+#container main #inspirate .results .gif .over .infoGif {
   display: none;
-  margin: 0 0 5px 5px;
 }
 
-#container main #inspirate #group-results .results .gif .over .infoGif #user {
-  font-size: 10px;
-  line-height: 12px;
-  color: #FFF;
-  text-align: left;
-  margin: 0;
-}
-
-#container main #inspirate #group-results .results .gif .over .infoGif #hover-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
-  color: #FFF;
-  font-size: 10px;
-  line-height: 12px;
-  text-align: left;
-  margin-top: 3px;
-  display: block;
-}
-
-#container main #inspirate #group-results .results .gif:hover .over {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-#container main #inspirate #group-results .results .gif:hover .buttonGif {
-  display: block;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-#container main #inspirate #group-results .results .gif:hover .infoGif {
-  display: block;
-  -ms-grid-column-align: self-end;
-      justify-self: self-end;
-  bottom: 0;
-}
-
-#container main #inspirate #group-results .results img {
+#container main #inspirate .results img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#container main #inspirate #group-results #see {
+#container main #inspirate #see {
   display: none;
   border: 1px solid #572EE5;
   border-radius: 25px;
@@ -474,15 +445,24 @@
   padding: 16px 32px;
 }
 
-#container main #inspirate #group-results #see:hover {
+#container main #inspirate #see:hover {
   background: #572EE5;
   color: #FFF;
+}
+
+#container main #inspirate #conFav {
+  width: 80%;
+  height: 500px;
 }
 
 #container main #inspirate #logoMis {
   margin-top: 10px;
   width: 24px;
   height: 22px;
+}
+
+#container main #inspirate #logoMis.dark {
+  border: solid;
 }
 
 #container main #inspirate #titleMis {
@@ -553,6 +533,156 @@
                 } */
 }
 
+#container main #inspirate #camara {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 145px;
+}
+
+#container main #inspirate #camara #logoCam.dark {
+  content: url("../assets/icons/camara-modo-noc.svg");
+}
+
+#container main #inspirate #containerMisGifos1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla {
+  width: 688px;
+  height: 390px;
+  border: 1px solid #572EE5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla .corner {
+  width: 27px;
+  height: 25px;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasSup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasSup #supIzq {
+  border-top: 2px solid #50E3C2;
+  border-left: 2px solid #50E3C2;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasSup #supDer {
+  border-top: 2px solid #50E3C2;
+  border-right: 2px solid #50E3C2;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #string h4 {
+  color: #572EE5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+  margin-top: 65px;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #string #Gifos {
+  color: #50E3C2;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #string p {
+  font-size: 16px;
+  line-height: 29px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #000;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasInf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasInf #infIzq {
+  border-bottom: 2px solid #50E3C2;
+  border-left: 2px solid #50E3C2;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #esquinasInf #infDer {
+  border-bottom: 2px solid #50E3C2;
+  border-right: 2px solid #50E3C2;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+#container main #inspirate #containerMisGifos1 #numeros {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#container main #inspirate #containerMisGifos1 #numeros .num {
+  margin: auto;
+  display: block;
+  margin: 24px 26px 19px;
+}
+
+#container main #inspirate #containerMisGifos1 #linea {
+  width: 790px;
+  border-bottom: 5px solid #572EE5;
+  border-radius: 20px;
+}
+
+#container main #inspirate #containerMisGifos1 button {
+  font-size: 13px;
+  line-height: 16px;
+  color: #572EE5;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  background: #FFF;
+  margin-top: 20px;
+  margin-bottom: 26px;
+  padding: 16px 22px;
+}
+
+#container main #inspirate #cinta {
+  margin-top: 300px;
+}
+
+#container main #inspirate #cinta.dark {
+  content: url("../assets/icons/pelicula-modo-noc.svg");
+}
+
 #container main #trending {
   background: #F3F5F8;
   overflow: hidden;
@@ -568,6 +698,7 @@
 
 #container main #trending .content {
   padding: 0 8px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,7 +715,7 @@
   display: none;
 }
 
-#container main #trending .content ul {
+#container main #trending .content #galery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -597,29 +728,37 @@
           justify-content: center;
 }
 
-#container main #trending .content ul li {
-  list-style: none;
-}
-
-#container main #trending .content ul li .gif {
+#container main #trending .content #galery .gif {
   width: 243px;
   height: 187px;
   position: relative;
   margin: 32px 11px 82px;
 }
 
-#container main #trending .content ul li .gif img {
+#container main #trending .content #galery .gif img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#container main #trending .content ul li .gif .over {
+#container main #trending .content #galery .gif .over {
   display: none;
 }
 
-#container main #trending .content .fullOver {
+#container main #trending.dark {
+  background: #222326;
+}
+
+#container main #trending.dark h2 {
+  color: #FFF;
+}
+
+#container main #trending.dark h4 {
+  color: #FFF;
+}
+
+#container main .fullOver {
   position: fixed;
   background: rgba(255, 255, 255, 0.9);
   top: 0;
@@ -627,26 +766,31 @@
   width: 100%;
   height: 100%;
   padding: 29px;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-#container main #trending .content .fullOver a {
+#container main .fullOver .close {
+  width: 24px;
+  height: 24px;
+  background: url("../assets/icons/close.svg") no-repeat;
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-top: 64px;
 }
 
-#container main #trending .content .fullOver #fullImg {
+#container main .fullOver .img-full {
   width: 318px;
   height: 245px;
   margin-top: 78px;
 }
 
-#container main #trending .content .fullOver #base {
+#container main .fullOver .base {
   margin-top: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -660,7 +804,7 @@
           justify-content: space-between;
 }
 
-#container main #trending .content .fullOver #base #pOne {
+#container main .fullOver .base #string #pOne {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   line-height: 18px;
@@ -668,7 +812,7 @@
   text-align: left;
 }
 
-#container main #trending .content .fullOver #base #pTwo {
+#container main .fullOver .base #string #pTwo {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 19px;
@@ -677,26 +821,37 @@
   margin-top: 6px;
 }
 
-#container main #trending .content .fullOver #base img {
+#container main .fullOver .base #options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+#container main .fullOver .base #options .icon-full {
   width: 36px;
   height: 36px;
   margin-left: 29px;
   opacity: 0.5;
-  border: 1px solid #9CAFC3;
-  border-radius: 6px;
-  padding: 6px;
+  cursor: pointer;
 }
 
-#container main #trending.dark {
-  background: #222326;
+#container main .fullOver .base #options .no-fav {
+  background: url("../assets/icons/icon-favoritos.svg") no-repeat;
+  background-size: contain;
 }
 
-#container main #trending.dark h2 {
-  color: #FFF;
+#container main .fullOver .base #options .favorito {
+  background: url("../assets/icons/icon-fav-active.svg") no-repeat;
+  background-size: contain;
 }
 
-#container main #trending.dark h4 {
-  color: #FFF;
+#container main .fullOver .base #options #down {
+  background: url("../assets/icons/icon-download.svg") no-repeat;
+  background-size: contain;
 }
 
 #container footer {
@@ -805,13 +960,18 @@
     display: block;
   }
   #container header nav .menu ul img:hover {
+    content: url("../assets/icons/CTA-crear-gifo-hover.svg");
     cursor: pointer;
   }
-  #container header nav .menu.dark {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 16px auto;
+  #container header nav .menu ul img:active {
+    content: url("../assets/icons/CTA-crear-gifo-active.svg");
+  }
+  #container header nav .menu ul img.dark {
+    content: url("../assets/icons/CTA-crear-gifo-modo-noc.svg");
+  }
+  #container header nav .menu ul img.dark:hover {
+    background: #37383C;
+    content: url("../assets/icons/CTA-crear-gifo-hover-modo-noc.svg");
   }
   #container header nav .menu.dark li {
     background: #37383C;
@@ -852,19 +1012,19 @@
     margin-top: 7px;
     margin-bottom: 37px;
   }
-  #container main #inspirate #group-results #span {
+  #container main #inspirate #span {
     width: 338px;
     margin-top: 58px;
   }
-  #container main #inspirate #group-results #title {
+  #container main #inspirate #title {
     margin: 55px 0 82px;
     font-size: 35px;
     line-height: 30px;
   }
-  #container main #inspirate #group-results .not .notResults {
+  #container main #inspirate .not .notResults {
     margin: 27px 0 29px;
   }
-  #container main #inspirate #group-results .not #notResults {
+  #container main #inspirate .not #notResults {
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     color: #50E3C2;
@@ -873,16 +1033,109 @@
     margin-top: 29px;
     margin-bottom: 112px;
   }
-  #container main #inspirate #group-results .results {
-    margin: 0 157px;
+  #container main #inspirate .results {
+    margin: 36px 157px;
+    height: auto;
     -ms-grid-rows: 1fr 1fr 1fr;
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 29px 29px;
   }
-  #container main #inspirate #group-results .results .gif {
+  #container main #inspirate .results .gif {
     width: 260px;
     height: 200px;
+  }
+  #container main #inspirate .results .gif .over {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(87, 46, 229, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #container main #inspirate .results .gif .over .buttonGif {
+    display: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 5px;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    opacity: 0.7;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .icon:hover {
+    opacity: unset;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .no-favorito {
+    background: url("../assets/icons/icon-fav.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .favorito {
+    background: url("../assets/icons/icon-fav-active.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .descarga {
+    background: url("../assets/icons/icon-download.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #inspirate .results .gif .over .buttonGif .full {
+    background: url("../assets/icons/icon-max-normal.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #inspirate .results .gif .over .infoGif {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 5px 5px;
+  }
+  #container main #inspirate .results .gif .over .infoGif #user {
+    font-size: 10px;
+    line-height: 12px;
+    color: #FFF;
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+  #container main #inspirate .results .gif .over .infoGif #title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: left;
+    margin-top: 3px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  #container main #inspirate .results .gif:hover .over {
+    width: 100%;
+    height: 100%;
+  }
+  #container main #inspirate .results .gif:hover .over .buttonGif, #container main #inspirate .results .gif:hover .over .infoGif {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   #container main #trending h2 {
     padding-top: 67px;
@@ -909,23 +1162,27 @@
     display: block;
   }
   #container main #trending .content #prev:hover, #container main #trending .content #next:hover {
-    background: #572EE5;
     cursor: pointer;
   }
-  #container main #trending .content ul li {
-    /* display: none;
-
-                            &:first-child {
-                                display: block;
-                            } */
+  #container main #trending .content #prev:hover {
+    content: url("../assets/icons/button-slider-left-hover.svg");
   }
-  #container main #trending .content ul li .gif {
+  #container main #trending .content #prev.dark {
+    content: url("../assets/icons/button-slider-left-md-noct.svg");
+  }
+  #container main #trending .content #next:hover {
+    content: url("../assets/icons/button-slider-right-hover.svg");
+  }
+  #container main #trending .content #next.dark {
+    content: url("../assets/icons/button-slider-right-md-noct.svg");
+  }
+  #container main #trending .content #galery .gif {
     width: 357px;
     height: 275px;
     position: relative;
     margin-top: 53px;
   }
-  #container main #trending .content ul li .gif .over {
+  #container main #trending .content #galery .gif .over {
     width: 0;
     height: 0;
     position: absolute;
@@ -943,36 +1200,59 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  #container main #trending .content ul li .gif .over .buttonGif {
+  #container main #trending .content #galery .gif .over .buttonGif {
     display: none;
-    margin: 10px 10px 0 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 10px;
   }
-  #container main #trending .content ul li .gif .over .buttonGif .icon {
+  #container main #trending .content #galery .gif .over .buttonGif .icon {
     width: 32px;
     height: 32px;
-    background: #FFF;
-    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
     opacity: 0.7;
-    padding: 7px;
   }
-  #container main #trending .content ul li .gif .over .buttonGif .icon:hover {
-    opacity: 1;
+  #container main #trending .content #galery .gif .over .buttonGif .icon:hover {
+    opacity: unset;
   }
-  #container main #trending .content ul li .gif .over .buttonGif #fav:hover {
-    opacity: 1;
+  #container main #trending .content #galery .gif .over .buttonGif .no-favorito {
+    background: url("../assets/icons/icon-fav.svg") no-repeat;
+    background-size: contain;
   }
-  #container main #trending .content ul li .gif .over .infoGif {
+  #container main #trending .content #galery .gif .over .buttonGif .favorito {
+    background: url("../assets/icons/icon-fav-active.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #trending .content #galery .gif .over .buttonGif .descarga {
+    background: url("../assets/icons/icon-download.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #trending .content #galery .gif .over .buttonGif .full {
+    background: url("../assets/icons/icon-max-normal.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main #trending .content #galery .gif .over .infoGif {
     display: none;
-    margin: 0 0 30px 13px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 51px 18px;
   }
-  #container main #trending .content ul li .gif .over .infoGif #user {
+  #container main #trending .content #galery .gif .over .infoGif #user {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 19px;
     color: #FFF;
     text-align: left;
   }
-  #container main #trending .content ul li .gif .over .infoGif #hover-title {
+  #container main #trending .content #galery .gif .over .infoGif #title {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: #FFF;
@@ -981,23 +1261,16 @@
     text-align: left;
     margin-top: 5px;
   }
-  #container main #trending .content ul li .gif:hover .over {
+  #container main #trending .content #galery .gif:hover .over {
     width: 100%;
     height: 100%;
-    cursor: pointer;
   }
-  #container main #trending .content ul li .gif:hover .over .buttonGif {
-    display: block;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+  #container main #trending .content #galery .gif:hover .over .buttonGif, #container main #trending .content #galery .gif:hover .over .infoGif {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  #container main #trending .content ul li .gif:hover .over .infoGif {
-    display: block;
-    -ms-grid-column-align: self-end;
-        justify-self: self-end;
-    bottom: 0;
-  }
-  #container main #trending .content .fullOver {
+  #container main .fullOver {
     background: #FFF;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1006,18 +1279,57 @@
         -ms-flex-pack: center;
             justify-content: center;
   }
-  #container main #trending .content .fullOver a {
+  #container main .fullOver .close {
     margin-top: 66px;
     margin-right: 278px;
   }
-  #container main #trending .content .fullOver #fullImg {
+  #container main .fullOver .img-full {
     width: 695px;
     height: 385px;
     margin-top: 160px;
   }
-  #container main #trending .content .fullOver #base {
+  #container main .fullOver .base {
     width: 695px;
     margin-top: 27px;
+  }
+  #container main .fullOver .base #string #pOne {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000;
+    text-align: left;
+  }
+  #container main .fullOver .base #string #pTwo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+    text-align: left;
+    margin-top: 6px;
+  }
+  #container main .fullOver .base #options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  #container main .fullOver .base #options .icon-full {
+    width: 36px;
+    height: 36px;
+    margin-left: 29px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  #container main .fullOver .base #options #fav {
+    background: url("../assets/icons/icon-favoritos.svg") no-repeat;
+    background-size: contain;
+  }
+  #container main .fullOver .base #options #down {
+    background: url("../assets/icons/icon-download.svg") no-repeat;
+    background-size: contain;
   }
   #container footer {
     height: 116px;

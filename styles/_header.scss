@@ -24,9 +24,27 @@
                 justify-content: space-between;
                 align-items: center;
 
+                .burger {
+                    width: 15px;
+                    height: 15px;
+                    background: url('../assets/icons/burger.svg') no-repeat;
+                }
+
+                .burgerAct {
+                    background: url('../assets/icons/close.svg') no-repeat;
+                }
+
                 &.dark {
                     #logoPpal {
-                        content: url('../assets/icons/logo-desktop-modo-noc.svg');
+                        content: url('../assets/icons/logo-mobile-modo-noct.svg') ;
+                    }
+
+                    .burger {
+                        background: url('../assets/icons/burger-modo-noct.svg') no-repeat;
+                    }
+
+                    .burgerAct {
+                        background: url('../assets/icons/close-modo-noct.svg') no-repeat;
                     }
                 }
             }
@@ -40,7 +58,7 @@
                 height: 500px;
                 @extend %menu;
 
-                display: none;
+                //display: none;
                 //flex-direction: column;
                 //align-items: flex-start;
 

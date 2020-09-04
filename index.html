@@ -5,27 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto GIFOS</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/clases.js"></script>
 </head>
 <body>
     <div id="container">
         <header class="light" id="header">
             <nav class="nav">
                 <div class="logo light">
-                    <a href="#container"><img id="logoPpal" src="./assets/icons/logo-mobile.svg" alt="logo_mobile"></a>
-                    <img id="burger" class="burger" src="./assets/icons/burger.svg" alt="burger">
+                    <a href="javascript:location.reload()"><img id="logoPpal" src="./assets/icons/logo-mobile.svg" alt="logo_mobile"></a>
+                    <div id="burger" class="burger"></div>
                 </div>
                 <div class="menu light on" id="menu">
                     <ul>
                         <li><a id="mode" href="javascript:switchTheme()">Modo Nocturno</a><span></span></li>
                         <li><a href="javascript:clearFav()">Favoritos</a><span></span></li>
                         <li><a href="javascript:clearGifos()">Mis GIFOS</a><span></span></li>
-                        <li><a href="javascript:clearCrearGifos()"><img src="./assets/icons/button-crear-gifo.svg" alt="add"></a></li>
+                        <li><a href="javascript:clearCrearGifos()"><img class="light" src="./assets/icons/button-crear-gifo.svg" alt="add"></a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <main>
             <section id="inspirate" class="light">
+                <img class="iconFav" src="./assets/icons/icon-favoritos.svg" alt="SinFav">
                 <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
                 <img class="ilustra" src="./assets/icons/ilustra_header.svg" alt="ilustra_header">
                 <div class="search">
@@ -34,40 +36,27 @@
                 </div>
                 <h3>Trending:</h3>
                 <p id="reactions">Reactions, Entertainment, Sports, Stickers, Artists</p>
-                <div id="group-results">
-                    <span id="span"></span>
-                    <h2 id="title"></h2>
-                    <div id="results" class="results">
+                <span id="span"></span>
+                <h2 id="title"></h2>
+                <div id="results">
 
-                    </div>
-                    <button onclick="contVmas()" id="see">VER MÁS</button>
                 </div>
+                <button onclick="contVmas()" id="see">VER MÁS</button>
             </section>
             <section id="trending" class="light">
                 <h2>Trending GIFOS</h2>
                 <h4>Mira los últimos GIFOS de nuestra comunidad.</h4>
                 <div id="content" class="content">
-                    <img id="prev" src="./assets/icons/button-slider-left.svg" alt="previus">
+                    <img id="prev" class="light" src="./assets/icons/button-slider-left.svg" alt="previus">
                     <ul id="galery">
                         
                     </ul>
-                    <div id="fOver" class="fullOver">
-                        <a href="javascript:close()"><img id="close" src="./assets/icons/close.svg" alt="close"></a>
-                        <img id="fullImg" src="./assets/embed1_.png" alt="">
-                        <div id="base">
-                            <div id="string">
-                                <p id="pOne">User</p>
-                                <p id="pTwo">Título GIFO</p>
-                            </div>
-                            <div id="options">
-                                <img src="./assets/icons/icon-favoritos.svg" alt="">
-                                <img src="./assets/icons/icon-download.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <img id="next" src="./assets/icons/button-slider-right.svg" alt="next">
+                    <img id="next" class="light" src="./assets/icons/button-slider-right.svg" alt="next">
                 </div>
             </section>
+            <div id="full-screen">
+                
+            </div>
         </main>
         <footer class="light">
             <div class="redes">

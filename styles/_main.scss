@@ -1,8 +1,6 @@
 #container {
     main {
-        //margin: auto;
         text-align: center;
-        //height: 430px;
     
         #inspirate {
             background: $bgOne;
@@ -11,8 +9,16 @@
             flex-direction: column;
             align-items: center;
 
+            &.crearGifos {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
             &.dark {
                 background: $bgDark;
+                //flex-direction: column;
 
                 h1 {
                     color: $bgOne;
@@ -54,6 +60,14 @@
                         }
                     }
                 }
+            }
+
+            .iconFav {
+                display: none;
+            }
+
+            .iconSinFav {
+                display: block;
             }
     
             h1 {
@@ -122,30 +136,24 @@
                 //padding: 0.2% 24% 0 24%;
                 //border: $borde;
             }
-
-            #group-results {
-                width: 100%;
-                //height: 20px;
-                //border: solid;
-                
-
-                #span {
+            
+            #span {
                     width: 157px;
                     border: 1px solid $colorActive;
                     opacity: 0.5;
                     margin: auto;
 
                     display: none;
-                }
+            }
                 
-                #title {
+            #title {
                     display: none;
                     margin: 43px 0 38px;
                     @extend %h2;
                     line-height: 40px;
-                }
+            }
 
-                .not {
+            .not {
                     //border: solid;
 
                     display: flex;
@@ -167,118 +175,50 @@
                         margin-top: 19px;
                         margin-bottom: 62px;
                     }
-                }
+            }
 
-                .results {
-                    height: 0;
+            .results {
+                    height: fit-content;
                     //border: $borde;
-                    margin: 0 21px;
+                    //margin: 36px 21px;
+                    //position: relative;
 
                     display: grid;
                     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr;
                     gap: 21px 21px;
-                    
-                    .gif {
-                        width: 156px;
-                        height: 120px;
-                        position: relative;
-                        //border: solid;
 
-                        .over {
-                            width: 0;
-                            height: 0;
-                            position: absolute;
-                            left: 0;
-                            bottom: 0;
-                            background: rgba($colorPrimary, 0.7);
-                                
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;;
+                        .gif {
+                            width: 156px;
+                            height: 120px;
+                            position: relative;
+                            //border: solid;
 
-                            .buttonGif {
-                                display: none;
-                                margin: 5px 5px 0 0;
-                                //border: 1px solid;
-            
-                                .icon {
-                                    width: 24px;
-                                    height: 24px;
-                                    background: $bgOne;
-                                    border-radius: 6px;
-                                    opacity: 0.7;
-                                    padding: 4px;
-                                
-                                    &:hover {
-                                        opacity: 1;
-                                    }
-                                }
-
-                                #fav {
-                                    &:hover {
-                                        opacity: 1;
-                                        //content: url(./assets/icons/icon-fav-active.svg);
-                                    }
-                                }
-                            }
-            
-                            .infoGif {
-                                display: none;
-                                margin: 0 0 5px 5px;
-                                //border: $borde;
-            
-                                #user {
-                                    @extend %p1;
-                                    font-size: 10px;
-                                    line-height: 12px;
-                                    color: $bgOne;
-                                    text-align: left;
-                                    margin: 0;
-                                }
-            
-                                #hover-title {
-                                    font-family: 'Roboto', sans-serif;
-                                    font-weight: bold;
-                                    color: $bgOne;
-                                    font-size: 10px;
-                                    line-height: 12px;
-                                    text-align: left;
-                                    margin-top: 3px;
-
-                                    display: block;
-                                }
-                            }
-                        }
-
-                        &:hover {
                             .over {
+                                display: none;
                                 width: 100%;
                                 height: 100%;
-                                cursor: pointer;
-                            }
-
-                            .buttonGif {
-                                display: block;
-                                align-self: flex-end;
-                            }
-
-                            .infoGif {
-                                display: block;
-                                //align-self: flex-start;
-                                justify-self: self-end;
+                                position: absolute;
+                                left: 0;
                                 bottom: 0;
+
+                                .buttonGif {
+                                    display: none;
+                                }
+                    
+                                .infoGif {
+                                    display: none;
+                                }
                             }
                         }
-                    }
 
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                     }
-                }
+            }
 
-                #see {
+            #see {
                     display: none;
                     border: 1px solid $colorPrimary;
                     border-radius: 25px;
@@ -296,13 +236,27 @@
                         background: $colorPrimary;
                         color: $bgOne;
                     }
-                }
             }
+            
+
+            // Favoritos //
+
+            #conFav {
+                width: 80%;
+                height: 500px;
+                //border: solid;
+            }
+
+            // Mis GIFOS //
 
             #logoMis {
                 margin-top: 10px;
                 width: 24px;
                 height: 22px;
+
+                &.dark {
+                    border: solid;
+                }
             }
 
             #titleMis {
@@ -377,6 +331,146 @@
                     align-self: end;
                 } */
             }
+
+            // crear GIFOS //
+
+            #camara{
+                display: flex;
+                //border: solid;
+
+                margin-bottom: 145px;
+
+                #logoCam {
+                    &.dark {
+                        content: url('../assets/icons/camara-modo-noc.svg');
+                    }
+                }
+            }
+
+            #containerMisGifos1{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                //border: solid;
+
+                #pantalla{
+                    width: 688px;
+                    height: 390px;
+                    border: 1px solid $colorPrimary;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .corner {
+                        width: 27px;
+                        height: 25px;
+                    }
+
+                    #esquinasSup {
+                        display: flex;
+                        justify-content: space-between;
+
+                        #supIzq {
+                            border-top: 2px solid $colorSecundary;
+                            border-left: 2px solid $colorSecundary;
+                            margin-top: 20px;
+                            margin-left: 20px;
+                        }
+
+                        #supDer {
+                            border-top: 2px solid $colorSecundary;
+                            border-right: 2px solid $colorSecundary;
+                            margin-top: 20px;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    #string {
+                        //border: solid;
+                        h4 {
+                            color: $colorPrimary;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 25px;
+                            line-height: 35px;
+                            text-align: center;
+                            margin-top: 65px;
+                        }
+                    
+                        #Gifos {
+                            color: $colorSecundary;
+                        }
+                    
+                        p {
+                            font-size: 16px;
+                            line-height: 29px;
+                            font-family: 'Roboto', sans-serif;
+                            text-align: center;
+                            color: $colorBlack;
+                        } 
+                    }
+
+                    #esquinasInf {
+                        display: flex;
+                        justify-content: space-between;
+
+                        #infIzq {
+                            border-bottom: 2px solid $colorSecundary;
+                            border-left: 2px solid $colorSecundary;
+                            margin-bottom: 20px;
+                            margin-left: 20px;
+                        }
+                    
+                        #infDer {
+                            border-bottom: 2px solid $colorSecundary;
+                            border-right: 2px solid $colorSecundary;
+                            margin-bottom: 20px;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+
+                #numeros {
+                    display: inline-flex;
+
+                    .num {
+                        margin: auto;
+                        display: block;
+                        margin: 24px 26px 19px;
+                    }
+
+                    
+                }
+
+                #linea{
+                    width: 790px;
+                    border-bottom: 5px solid $colorPrimary;
+                    border-radius: 20px;
+                    //margin-left: 155px;
+                }
+
+                button{
+                    font-size: 13px;
+                    line-height: 16px;
+                    color: $colorPrimary;
+                    border: 1px solid $colorPrimary;
+                    border-radius: 25px;
+                    background: $bgOne;
+                    //display: block;
+                    margin-top: 20px;
+                    margin-bottom: 26px;
+                    padding: 16px 22px;
+                }
+            }
+
+            #cinta {
+                //border: solid;
+                margin-top: 300px;
+
+                &.dark {
+                    content: url('../assets/icons/pelicula-modo-noc.svg');
+                }
+            }
         }
     
         #trending {
@@ -401,6 +495,8 @@
                 //border: $borde;
                 //max-width: 1440px;
                 padding: 0 8px;
+                //position: relative;
+                overflow: hidden;
 
                 display: flex;
                 flex-flow: row nowrap;
@@ -409,93 +505,28 @@
                 #prev, #next {
                     display: none;
                 }
-                
-                ul {
-                    //border: solid;
-                    //position: absolute;
+
+                #galery {
                     display: flex;
                     flex-flow: row nowrap;
                     justify-content: center;
-                    //background: red;
+                    //border: solid;
 
-                    li {
-                        list-style: none;
-
-                        .gif {
-                            width: 243px;
-                            height: 187px;
-                            position: relative;
-                            //border: solid;
-                            margin: 32px 11px 82px;
-
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-
-                            .over {
-                                display: none;
-                            }
-                        }
-                    }
-                }
-
-                .fullOver {
-                    position: fixed;
-                    background: rgba(255,255,255,0.90);
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    padding: 29px;
-
-                    display: none;
-                    //display: flex;
-                    flex-direction: column;
-
-                    a {
-                        align-self: flex-end;
-                        margin-top: 64px;
-                    }
-
-                    #fullImg {
-                        width: 318px;
-                        height: 245px;
-                        margin-top: 78px;
-                    }
-
-                    #base {
-                        margin-top: 14px;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-
-                        #pOne {
-                            font-family: 'Roboto', sans-serif;
-                            font-size: 15px;
-                            line-height: 18px;
-                            color: #000000;
-                            text-align: left;
-                        }
-
-                        #pTwo {
-                            font-family: 'Montserrat', sans-serif;
-                            font-size: 16px;
-                            line-height: 19px;
-                            color: #000000;
-                            text-align: left;
-                            margin-top: 6px;
-                        }
+                    .gif {
+                        width: 243px;
+                        height: 187px;
+                        position: relative;
+                        //border: solid;
+                        margin: 32px 11px 82px;
 
                         img {
-                            width: 36px;
-                            height: 36px;
-                            margin-left: 29px;
-                            opacity: 0.5;
-                            border: 1px solid #9CAFC3;
-                            border-radius: 6px;
-                            padding: 6px;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .over {
+                            display: none;
                         }
                     }
                 }  
@@ -510,6 +541,92 @@
 
                 h4 {
                     color: $bgOne;
+                }
+            }
+        }
+
+        .fullOver {
+            position: fixed;
+            background: rgba(255,255,255,0.90);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 29px;
+
+            //display: none;
+            display: flex;
+            flex-direction: column;
+
+            .close {
+                width: 24px;
+                height: 24px;
+                background: url('../assets/icons/close.svg') no-repeat;
+                align-self: flex-end;
+                margin-top: 64px;
+            }
+
+            .img-full {
+                width: 318px;
+                height: 245px;
+                margin-top: 78px;
+            }
+
+            .base {
+                margin-top: 14px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                #string {
+                    #pOne {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 15px;
+                        line-height: 18px;
+                        color: #000000;
+                        text-align: left;
+                    }
+
+                    #pTwo {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: #000000;
+                        text-align: left;
+                        margin-top: 6px;
+                    }
+                }
+
+                #options {
+                    display: flex;
+                    flex-flow: row wrap;
+
+                    .icon-full {
+                        width: 36px;
+                        height: 36px;
+                        margin-left: 29px;
+                        opacity: 0.5;
+                        //border: 1px solid $colorSecundary;
+                        //border-radius: 6px;
+                        //padding: 6px;
+                        cursor: pointer;
+                    }
+
+                    .no-fav {
+                        background: url('../assets/icons/icon-favoritos.svg') no-repeat;
+                        background-size: contain;
+                    }
+
+                    .favorito {
+                        background: url('../assets/icons/icon-fav-active.svg') no-repeat;
+                        background-size: contain;
+                    }
+
+                    #down {
+                        background: url('../assets/icons/icon-download.svg') no-repeat;
+                        background-size: contain;
+                    }
+                    
                 }
             }
         }
