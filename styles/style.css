@@ -571,6 +571,80 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  /* .corner {
+                        width: 27px;
+                        height: 25px;
+                    }
+
+                    #esquinasSup {
+                        display: flex;
+                        justify-content: space-between;
+
+                        #supIzq {
+                            border-top: 2px solid $colorSecundary;
+                            border-left: 2px solid $colorSecundary;
+                            margin-top: 20px;
+                            margin-left: 20px;
+                        }
+
+                        #supDer {
+                            border-top: 2px solid $colorSecundary;
+                            border-right: 2px solid $colorSecundary;
+                            margin-top: 20px;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    #string {
+                        //border: solid;
+                        h4 {
+                            color: $colorPrimary;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 25px;
+                            line-height: 35px;
+                            text-align: center;
+                            margin-top: 65px;
+                        }
+                    
+                        #Gifos {
+                            color: $colorSecundary;
+                        }
+                    
+                        p {
+                            font-size: 16px;
+                            line-height: 29px;
+                            font-family: 'Roboto', sans-serif;
+                            text-align: center;
+                            color: $colorBlack;
+                        } 
+                    }
+
+                    #esquinasInf {
+                        display: flex;
+                        justify-content: space-between;
+
+                        #infIzq {
+                            border-bottom: 2px solid $colorSecundary;
+                            border-left: 2px solid $colorSecundary;
+                            margin-bottom: 20px;
+                            margin-left: 20px;
+                        }
+                    
+                        #infDer {
+                            border-bottom: 2px solid $colorSecundary;
+                            border-right: 2px solid $colorSecundary;
+                            margin-bottom: 20px;
+                            margin-right: 20px;
+                        }
+                    } */
+}
+
+#container main #inspirate #containerMisGifos1 #pantalla #video {
+  width: 640px;
+  height: 342px;
+  position: absolute;
+  top: 119px;
+  right: 371px;
 }
 
 #container main #inspirate #containerMisGifos1 #pantalla .corner {
@@ -645,16 +719,44 @@
   margin-right: 20px;
 }
 
-#container main #inspirate #containerMisGifos1 #numeros {
+#container main #inspirate #containerMisGifos1 #contNumCrono {
+  width: 688px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#container main #inspirate #containerMisGifos1 #contNumCrono #numeros {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  padding-left: 155px;
 }
 
-#container main #inspirate #containerMisGifos1 #numeros .num {
+#container main #inspirate #containerMisGifos1 #contNumCrono #numeros .num {
   margin: auto;
   display: block;
   margin: 24px 26px 19px;
+}
+
+#container main #inspirate #containerMisGifos1 #contNumCrono #crono {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  position: relative;
+  right: -70px;
 }
 
 #container main #inspirate #containerMisGifos1 #linea {
@@ -663,7 +765,7 @@
   border-radius: 20px;
 }
 
-#container main #inspirate #containerMisGifos1 button {
+#container main #inspirate #containerMisGifos1 .show {
   font-size: 13px;
   line-height: 16px;
   color: #572EE5;
@@ -673,6 +775,10 @@
   margin-top: 20px;
   margin-bottom: 26px;
   padding: 16px 22px;
+}
+
+#container main #inspirate #containerMisGifos1 .hide {
+  display: none;
 }
 
 #container main #inspirate #cinta {

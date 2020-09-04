@@ -28,12 +28,20 @@ class MiStorage{
         let favoritos = this.getIdsFavoritos();
         return favoritos.indexOf(id)<0?null:favoritos[favoritos.indexOf(id)];
     }
+    setIdsMisGifs(e){
+        this.miStorage.setItem(this.favoritos,e);
+    }
+    getIdsMisGifs(){
+        let favoritos = this.getIdsFavoritos();
+        return favoritos.indexOf(id)<0?null:favoritos[favoritos.indexOf(id)];
+    }
 }
 class Giphy{
     constructor(){
         this.API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
         this.URL_TRENDING = 'https://api.giphy.com/v1/gifs/trending';
         this.URL_BASE = 'https://api.giphy.com/v1/gifs';
+        this.URL_UPLOAD = 'https://upload.giphy.com/v1/gifs';
     }
 
     async getTrending(limit=3, offset=0){//async y await
@@ -164,8 +172,10 @@ class Giphy{
         let divDown = document.createElement("div");
         divDown.id = "down";
         divDown.classList.add('icon-full');
-        //divDown.addEventListener("click", giphy.descargarGif(imgFull.src, pTwo.innerText));
-
+        divDown.addEventListener("click", () => {
+            giphy.descargarGif(imgFull.src, pTwo.innerText);
+        });
+        
         divOptions.appendChild(divFav);
         divOptions.appendChild(divDown);
 
@@ -186,5 +196,15 @@ class Giphy{
             e.currentTarget.classList.add(CLASS_FAVORITO);
             giphy.addFavoritById(e.currentTarget);
         }
+    }
+
+    async guardarGiphy(gifGrabado) {
+        let form = new FormData();
+        form.append('file', gifGrabado, 'myGif_' + Date.now() +'.gif');
+        form.append('api_key', this.API_KEY);
+        form.append('username', 'jdmontoyab');
+        let resp = await fetch(this.URL_UPLOAD, {method:'POST', body:form});
+        let data = await resp.json();
+        console.log(data);
     }
 }

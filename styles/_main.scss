@@ -362,7 +362,85 @@
                     flex-direction: column;
                     justify-content: space-between;
 
-                    .corner {
+                    #video {
+                        width: 640px;
+                        height: 342px;
+                        //border: solid;
+                        position: absolute;
+                        top: 119px;
+                        right: 371px;
+                        //object-fit: cover;
+                    }
+
+                        .corner {
+                            width: 27px;
+                            height: 25px;
+                        }
+    
+                        #esquinasSup {
+                            display: flex;
+                            justify-content: space-between;
+    
+                            #supIzq {
+                                border-top: 2px solid $colorSecundary;
+                                border-left: 2px solid $colorSecundary;
+                                margin-top: 20px;
+                                margin-left: 20px;
+                            }
+    
+                            #supDer {
+                                border-top: 2px solid $colorSecundary;
+                                border-right: 2px solid $colorSecundary;
+                                margin-top: 20px;
+                                margin-right: 20px;
+                            }
+                        }
+    
+                        #string {
+                            //border: solid;
+                            h4 {
+                                color: $colorPrimary;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 25px;
+                                line-height: 35px;
+                                text-align: center;
+                                margin-top: 65px;
+                            }
+                        
+                            #Gifos {
+                                color: $colorSecundary;
+                            }
+                        
+                            p {
+                                font-size: 16px;
+                                line-height: 29px;
+                                font-family: 'Roboto', sans-serif;
+                                text-align: center;
+                                color: $colorBlack;
+                            } 
+                        }
+    
+                        #esquinasInf {
+                            display: flex;
+                            justify-content: space-between;
+    
+                            #infIzq {
+                                border-bottom: 2px solid $colorSecundary;
+                                border-left: 2px solid $colorSecundary;
+                                margin-bottom: 20px;
+                                margin-left: 20px;
+                            }
+                        
+                            #infDer {
+                                border-bottom: 2px solid $colorSecundary;
+                                border-right: 2px solid $colorSecundary;
+                                margin-bottom: 20px;
+                                margin-right: 20px;
+                            }
+                        }
+                    
+
+                    /* .corner {
                         width: 27px;
                         height: 25px;
                     }
@@ -427,19 +505,41 @@
                             margin-bottom: 20px;
                             margin-right: 20px;
                         }
-                    }
+                    } */
                 }
 
-                #numeros {
-                    display: inline-flex;
+                #contNumCrono {
+                    width: 688px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    //border: solid;
 
-                    .num {
-                        margin: auto;
-                        display: block;
-                        margin: 24px 26px 19px;
+                    #numeros {
+                        display: inline-flex;
+                        //border: solid;
+                        padding-left: 155px;
+
+                        .num {
+                            margin: auto;
+                            display: block;
+                            margin: 24px 26px 19px;
+                        }  
                     }
 
-                    
+                    #crono {
+                        //display: none;
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 13px;
+                        color: $colorPrimary;
+                        letter-spacing: 0;
+                        text-align: center;
+                        //border: solid blue;
+                        position: relative;
+                        right: -70px;
+                        //padding-bottom: 50px;
+                    }
                 }
 
                 #linea{
@@ -449,7 +549,7 @@
                     //margin-left: 155px;
                 }
 
-                button{
+                .show {
                     font-size: 13px;
                     line-height: 16px;
                     color: $colorPrimary;
@@ -460,6 +560,10 @@
                     margin-top: 20px;
                     margin-bottom: 26px;
                     padding: 16px 22px;
+                }
+
+                .hide {
+                    display: none;
                 }
             }
 
