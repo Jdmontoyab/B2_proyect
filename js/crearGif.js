@@ -104,7 +104,11 @@ const getGrabar = () => {
 function getStop() {
     recorder.stopRecording(function() {
         let blob = recorder.getBlob();
-        giphy.guardarGiphy(blob);
+        giphy.guardarGiphy(blob).then(data => {
+            let s = new MiStorage();
+            s.setIdsMisGifs(data.id);
+            console.log('Finalizó la carga');
+        });
     });
 }
 

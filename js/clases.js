@@ -16,6 +16,7 @@ class MiStorage{
     constructor(){
         this.miStorage = window.localStorage;
         this.favoritos = 'favoritos';
+        this.IDS_LIST = 'misGifs';
     }
     getIdsFavoritos(){
         let favoritos = this.miStorage.getItem(this.favoritos);
@@ -28,12 +29,14 @@ class MiStorage{
         let favoritos = this.getIdsFavoritos();
         return favoritos.indexOf(id)<0?null:favoritos[favoritos.indexOf(id)];
     }
-    setIdsMisGifs(e){
-        this.miStorage.setItem(this.favoritos,e);
+    setIdsMisGifs(id){
+        let ids = this.miStorage.getItem(this.IDS_LIST)!=null?this.miStorage.getItem(this.IDS_LIST).split(','):[];
+        ids.push(id);
+        this.miStorage.setItem(this.IDS_LIST,ids);
+        
     }
     getIdsMisGifs(){
-        let favoritos = this.getIdsFavoritos();
-        return favoritos.indexOf(id)<0?null:favoritos[favoritos.indexOf(id)];
+        return this.miStorage.getItem(IDS_LIST);
     }
 }
 class Giphy{
@@ -205,6 +208,7 @@ class Giphy{
         form.append('username', 'jdmontoyab');
         let resp = await fetch(this.URL_UPLOAD, {method:'POST', body:form});
         let data = await resp.json();
-        console.log(data);
+        //console.log(data);
+        return data.data;
     }
 }
