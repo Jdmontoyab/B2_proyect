@@ -11,8 +11,6 @@
                 .logo {
                     width: 50%;
                     padding-left: 10.8%;
-                    //background: blue;
-                    //border: solid;
 
                     #logoPpal {
                         content: url('../assets/icons/logo-desktop.svg');
@@ -21,20 +19,28 @@
                     #burger {
                         display: none;
                     }
+
+                    &.dark {
+                        #logoPpal {
+                            content: url('../assets/icons/Logo-modo-noc.svg') ;
+                        }
+                    }
+                }
+
+                .off {
+                    display: none;
                 }
 
                 .menu {
                     width: 100%;
                     height: 90px;
-                    //background: yellow;
-                    //border: solid;
 
                     display: flex;
 
                     ul {
                         width: 50%;
                         margin: auto;
-                        //border: solid;
+                        background: $bgOne;
                         
                         display: flex;
                         flex-direction: row;
@@ -46,6 +52,10 @@
     
                             flex-direction: row;
                             align-items: center;
+
+                            &:first-child {
+                                padding-top: unset;
+                            }
 
                             &:last-child {
                                 padding-bottom: 0;
@@ -60,6 +70,18 @@
                                 letter-spacing: 0;
                                 text-align: center;
                                 text-decoration: none;
+
+                                &:hover {
+                                    border-bottom: 2px solid $underLine;
+
+                                    &:last-child {
+                                        border-bottom: unset;
+                                    }
+                                }
+    
+                                &:active {
+                                    color: $colorActive;
+                                }
                             }
 
                             span {
@@ -68,10 +90,6 @@
                         }
 
                         img {
-                            //border: 1px solid $colorPrimary;
-                            //border-radius: 50%;
-                            //padding: 20px;
-
                             display: block;
 
                             &:hover {
@@ -92,22 +110,17 @@
                                 }
                             }
                         }
-                    }
-    
-                    &.dark {
-                        //display: flex;
-                        //margin: 16px auto;
 
-                        li {
+                        &.dark {
                             background: $bgDark;
+
+                            li {
+                                background: $bgDark;
+                            }
 
                             a {
                                 color: $bgOne;
                             }
-                        }
-
-                        img:hover {
-                            background: $bgOne;
                         }
                     }
                 }

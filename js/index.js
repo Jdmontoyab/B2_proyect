@@ -207,18 +207,16 @@ let i = 1;
 
 function changeIcon() {
     if (i == 1) {
-        //icon.src = "./assets/icons/close.svg";
         icon.classList.add('burgerAct');
         icon.alt = 'close';
         let menu = document.getElementById('menu');
-        menu.classList.remove('on');
+        menu.classList.remove('off');
         i = 0;
     } else {
         i = 1;
-        //icon.src = "./assets/icons/burger.svg";
         icon.classList.remove('burgerAct')
         icon.alt = 'burger';
         let menu = document.getElementById('menu');
-        menu.classList.add('on');
+        menu.classList.add('off');
     }
 };
