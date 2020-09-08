@@ -12,7 +12,6 @@ let clearGifos = () => {
         conMisGifos(prueba);
         let container = document.getElementById('results');
         giphy.getGifsPorIds(storage.getIdsMisGifs()).then((gifsData) => {
-            //console.log(gifsData);
             if(gifsData != null)
             gifsData.forEach(gifData => {
                 let nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, gifData.images.downsized_medium.url, gifData.id);

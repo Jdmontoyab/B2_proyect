@@ -11,7 +11,6 @@ giphy.getTextTrending().then((text) => {
 });
 
 giphy.getTrending().then((gifs) => {
-    console.log(gifs);
     let contenedor = document.getElementById("galery");
     contenedor.innerHTML='';
     gifs.data.forEach(gifData => {
@@ -27,7 +26,6 @@ let almacenarObjetoEnStorage = function(gif) {
 let showInit = function(gif, contenedor){
     let divContent = document.createElement("div");
     divContent.classList.add("gif");
-    //console.log(gif);
     
     let img = document.createElement("img");
     img.src = gif.url;

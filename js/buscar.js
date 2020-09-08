@@ -18,7 +18,6 @@ input.addEventListener('keyup', (element) => {
         items[i].remove();
     }
 	giphy.getSuggest(element.target.value).then((suggest) => {
-        //first.innerHTML = '';
         suggest.data.forEach(e => {
             first.insertAdjacentHTML('afterend',
             `<li name="items" class="items">

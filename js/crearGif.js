@@ -44,9 +44,6 @@ const crearGifos = (container) => {
     <img id="cinta" class="light" src="./assets/icons/pelicula.svg" alt="Cinta">`);
 }
 
-/* let button = document.getElementById('start');
-console.log(button); */
-
 function getStreamAndRecord () { 
     navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -68,7 +65,6 @@ function getStreamAndRecord () {
         button.classList.add('show');
         button.innerText = 'GRABAR';
         button.onclick = getGrabar;
-        //button.onclick = timer();
     });
 }
 
@@ -90,8 +86,6 @@ const start = () => {
 let recorder;
 
 const getGrabar = () => {
-    // Timer // 
-
     let crono = document.getElementById('crono');
     let seconds = 0;
     let minutes = 0;
@@ -99,7 +93,6 @@ const getGrabar = () => {
     let t;
 
     function contar() {
-        console.log(crono);
         seconds++;
         if (seconds >= 60) {
             seconds = 0;
@@ -116,7 +109,6 @@ const getGrabar = () => {
 
     function timer() {
         t = setTimeout(contar, 1000);
-        console.log(t);
     }
 
     let button = document.getElementById('start');
@@ -131,7 +123,6 @@ const getGrabar = () => {
 
     timer();
 
-    //button.onclick = getStop;
     button.onclick = function () {
         clearTimeout(t);
         getStop();
@@ -141,7 +132,6 @@ const getGrabar = () => {
 function getStop() {
     recorder.stopRecording(function() {
         let blob = recorder.getBlob();
-        //console.log('Prueba' + JSON.parse(blob));
         let button = document.getElementById('start');
         let crono = document.getElementById('crono');
 
@@ -166,25 +156,3 @@ function upLoadGif(blob) {
     stepTwo.src = "./assets/icons/paso-a-paso.svg";
     stepThree.src = "./assets/icons/paso-a-paso-hover.svg";
 }
-
-
-
-
-/* Start button */
-
-/* let contador = 0;
-
-if (contador == 0) {
-    button.onclick = timer;
-    contador++;
-} else if (contador == 1) {
-    button.onclick = function() {
-        clearTimeout(t);
-    };
-    contador++;
-} else {
-    button.onclick = function() {
-        h1.textContent = "00:00:00";
-        seconds = 0; minutes = 0; hours = 0;
-    }
-} */

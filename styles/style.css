@@ -613,50 +613,6 @@
   margin: 40px 0 136px;
 }
 
-#container main #inspirate #contPpal {
-  width: 100%;
-  border: solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#container main #inspirate #contOne {
-  border: solid;
-  /* img {
-                    border: solid;
-                } */
-}
-
-#container main #inspirate #contTwo {
-  height: 100%;
-}
-
-#container main #inspirate #contTwo #grabar {
-  width: 688px;
-  height: 390px;
-  border: 1px solid #572EE5;
-}
-
-#container main #inspirate #contThree {
-  border: solid;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  /*  #logoCam {
-                    align-self: end;
-                } */
-}
-
 #container main #inspirate #camara {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1577,22 +1533,22 @@
     cursor: pointer;
   }
   #container footer .redes #facebook:hover {
-    content: url(../assets/icons/icon_facebook_hover.svg);
+    content: url("../assets/icons/icon_facebook_hover.svg");
   }
   #container footer .redes #facebook.dark {
-    content: url(../assets/icons/icon_facebook_noc.svg);
+    content: url("../assets/icons/icon_facebook_noc.svg");
   }
   #container footer .redes #twitter:hover {
-    content: url(../assets/icons/icon-twitter-hover.svg);
+    content: url("../assets/icons/icon-twitter-hover.svg");
   }
   #container footer .redes #twitter.dark {
-    content: url(../assets/icons/icon_twitter_noc.svg);
+    content: url("../assets/icons/icon_twitter_noc.svg");
   }
   #container footer .redes #instagram:hover {
-    content: url(../assets/icons/icon_instagram-hover.svg);
+    content: url("../assets/icons/icon_instagram-hover.svg");
   }
   #container footer .redes #instagram.dark {
-    content: url(../assets/icons/icon_instagram_noc.svg);
+    content: url("../assets/icons/icon_instagram_noc.svg");
   }
   #container footer #p2 {
     font-size: 13px;
@@ -1604,18 +1560,5 @@
 #container {
   width: 100%;
   padding-top: 95px;
-}
-
-.button-normal {
-  background: #FFF;
-  border: 1px solid #572EE5;
-}
-
-.button-hover {
-  background: #572EE5;
-}
-
-.button-active {
-  background: #9CAFC3;
 }
 /*# sourceMappingURL=style.css.map */

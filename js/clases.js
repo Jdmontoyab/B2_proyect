@@ -1,7 +1,5 @@
 // Creación de clase gifos // 
 
-//#########Global###########//
-
 class Gif{
 	constructor(name, user, url, url2, id){
         this.name = name;
@@ -11,6 +9,8 @@ class Gif{
         this.id = id;
     }
 }
+
+// Creación de clase MiStorage // 
 
 class MiStorage{
     constructor(){
@@ -39,6 +39,8 @@ class MiStorage{
     }
 }
 
+// Creación de clase Giphy // 
+
 class Giphy{
     constructor(){
         this.API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
@@ -62,7 +64,6 @@ class Giphy{
     }
 
     async getSuggest(input) {
-        //let input = event.target.value;
         let search = document.getElementById('search');
 
         if (input) {
@@ -231,7 +232,6 @@ class Giphy{
         form.append('username', 'jdmontoyab');
         let resp = await fetch(this.URL_UPLOAD, {method:'POST', body:form});
         let data = await resp.json();
-        //console.log(data);
         return data.data;
     }
 }

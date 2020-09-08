@@ -51,6 +51,7 @@ let showFav = function(gif){
 let obtenerObjectEnStorage = function () {
     let gifs = giphy.getGifObjects();
 }
+
 obtenerObjectEnStorage();
 
 
