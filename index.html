@@ -31,16 +31,17 @@
                 <img class="iconFav" src="./assets/icons/icon-favoritos.svg" alt="SinFav">
                 <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
                 <img class="ilustra" src="./assets/icons/ilustra_header.svg" alt="ilustra_header">
-                <div class="search">
-                    <input type="text" id="search" class="light" placeholder="Busca GIFOS y más">
-                    <a href="javascript:search()"><img class="logoSearch" src="./assets/icons/icon-search.svg" alt="search"></a>
+                <div id="cont-list" class="cont-list">
+                    <ul id="itemSug">
+                        <li id="first"><input type="text" id="search" class="light" placeholder="Busca GIFOS y más"></li>
+                    </ul>
                 </div>
                 <h3>Trending:</h3>
                 <p id="reactions">Reactions, Entertainment, Sports, Stickers, Artists</p>
                 <span id="span"></span>
                 <h2 id="title"></h2>
                 <div id="results"></div>
-                <button onclick="contVmas()" id="see">VER MÁS</button>
+                <button id="see">VER MÁS</button>
             </section>
             <section id="trending" class="light">
                 <h2>Trending GIFOS</h2>
@@ -60,9 +61,9 @@
         <footer class="light">
             <div class="redes">
                 <p id="p1">Compartir en:</p>
-                <img src="./assets/icons/icon_facebook.svg" alt="facebook">
-                <img src="./assets/icons/icon-twitter.svg" alt="twitter">
-                <img src="./assets/icons/icon_instagram.svg" alt="instagram">
+                <a href="https://www.facebook.com"><img class="light redesIcon" id="facebook" src="./assets/icons/icon_facebook.svg" alt="facebook"></a>
+                <a href="https://www.twitter.com"><img class="light redesIcon" id="twitter" src="./assets/icons/icon-twitter.svg" alt="twitter"></a>
+                <a href="https://www.instagram.com/"><img class="light redesIcon" id="instagram" src="./assets/icons/icon_instagram.svg" alt="instagram"></a>
             </div>
             <p id="p2">© GIFOS 2020 All Rights Reserved.</p>
         </footer>

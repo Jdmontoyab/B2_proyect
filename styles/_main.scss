@@ -90,39 +90,87 @@
                 //border: $borde;
             }
 
-            .search {
-                width: 89.1%;
-                height: 50px;
-                border-radius: 27px;
+            .cont-list {
+                width: 334px;
+                height: fit-content;
                 border: 1px solid $colorPrimary;
+                border-radius: 27px;
 
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
 
-                input {
-                    @extend %input;
-                    margin-left: 55px;
-                    //border: $borde;
-
-                    &.dark {
-                        color: $bgOne;
-                    }
+                &.active {
+                    display: flex;
                 }
 
-                a {
-                    width: 20px;
-                    height: 20px;
+                #itemSug {
+                    margin-left: 21px;
 
-                    margin-right: 20px;
-                    //border: $borde;
+                    &.after {
+                        .items {
+                            display: none;
+                        }
+                    }
 
-                    .LogoSearch {
-                        width: 5.3%;
-                        height: 1.7%;
+                    &.again {
+                        .items {
+                            display: block;
+                        }
+                    }
+
+                    #first {
+                        list-style: none;
+                        
+                        input {
+                            @extend %input;
+                            width: 307px;
+                            height: 50px;
+                            background: url('../assets/icons/icon-search.svg') no-repeat;
+                            background-position: 97% center;
+                            padding-top: 10px;
+
+                            &.active {
+                                width: 314px;
+                                outline: none;
+                                background: url('../assets/icons/close.svg') no-repeat;
+                                background-position: 97% center;
+                                border-bottom: 2px solid $colorActive;
+                                //border-bottom-width: 50%;
+                                height: 50px;
+                                margin-left: -10px;
+                            }
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+
+                    li {
+                        list-style: none;
+                        text-align: left;
+                        margin-bottom: 10px;
+
+                        &:nth-child(2) {
+                            margin-top: 20px;
+                        }
+
+                        a {
+                            font-family: 'Roboto', sans-serif;
+                            font-size: 16px;
+                            color: $colorActive;
+                            text-align: left;
+                            text-decoration: none;
+
+                            img {
+                                margin-right: 10px;
+                            }
+                        }
                     }
                 }
-            } 
+            }
 
             h3 {
                 @extend %h3;
@@ -180,7 +228,7 @@
             .results {
                     height: fit-content;
                     //border: $borde;
-                    //margin: 36px 21px;
+                    margin: 36px 21px;
                     //position: relative;
 
                     display: grid;
@@ -190,7 +238,7 @@
                         .gif {
                             width: 156px;
                             height: 120px;
-                            position: relative;
+                            //position: relative;
                             //border: solid;
 
                             .over {
@@ -439,73 +487,6 @@
                             }
                         }
                     
-
-                    /* .corner {
-                        width: 27px;
-                        height: 25px;
-                    }
-
-                    #esquinasSup {
-                        display: flex;
-                        justify-content: space-between;
-
-                        #supIzq {
-                            border-top: 2px solid $colorSecundary;
-                            border-left: 2px solid $colorSecundary;
-                            margin-top: 20px;
-                            margin-left: 20px;
-                        }
-
-                        #supDer {
-                            border-top: 2px solid $colorSecundary;
-                            border-right: 2px solid $colorSecundary;
-                            margin-top: 20px;
-                            margin-right: 20px;
-                        }
-                    }
-
-                    #string {
-                        //border: solid;
-                        h4 {
-                            color: $colorPrimary;
-                            font-family: 'Montserrat', sans-serif;
-                            font-size: 25px;
-                            line-height: 35px;
-                            text-align: center;
-                            margin-top: 65px;
-                        }
-                    
-                        #Gifos {
-                            color: $colorSecundary;
-                        }
-                    
-                        p {
-                            font-size: 16px;
-                            line-height: 29px;
-                            font-family: 'Roboto', sans-serif;
-                            text-align: center;
-                            color: $colorBlack;
-                        } 
-                    }
-
-                    #esquinasInf {
-                        display: flex;
-                        justify-content: space-between;
-
-                        #infIzq {
-                            border-bottom: 2px solid $colorSecundary;
-                            border-left: 2px solid $colorSecundary;
-                            margin-bottom: 20px;
-                            margin-left: 20px;
-                        }
-                    
-                        #infDer {
-                            border-bottom: 2px solid $colorSecundary;
-                            border-right: 2px solid $colorSecundary;
-                            margin-bottom: 20px;
-                            margin-right: 20px;
-                        }
-                    } */
                 }
 
                 #contNumCrono {
@@ -519,7 +500,7 @@
                     #numeros {
                         display: inline-flex;
                         //border: solid;
-                        padding-left: 155px;
+                        //padding-left: 155px;
 
                         .num {
                             margin: auto;
@@ -537,7 +518,7 @@
                         text-align: center;
                         //border: solid blue;
                         position: relative;
-                        right: -70px;
+                        //right: -70px;
                         //padding-bottom: 50px;
                     }
                 }
@@ -619,7 +600,7 @@
                     .gif {
                         width: 243px;
                         height: 187px;
-                        position: relative;
+                        //position: relative;
                         //border: solid;
                         margin: 32px 11px 82px;
 

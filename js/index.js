@@ -1,36 +1,28 @@
-//#########Globales###########//
-//let contenedor = document.getElementById("results");
-let giphy = new Giphy();//Instanciar la clase de Giphy archivo clases.js
-let storage = new MiStorage();//Instanciar la clase de MiStorage archivo clases.js
-const CLASS_FAVORITO='favorito';//para el almacenamiento del localStorage
+let giphy = new Giphy();
+let storage = new MiStorage();
+const CLASS_FAVORITO='favorito';
 
 giphy.getTrending().then((gifs) => {
     let contenedor = document.getElementById("galery");
-    console.log(gifs); //TODO:eliminar
     contenedor.innerHTML='';
     gifs.data.forEach(gifData => {
-        let gif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, false, gifData.id);
+        let gif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, gifData.images.downsized_medium.url, gifData.id);
         showInit(gif, contenedor);
-        //almacenarObjetoEnStorage(gif);
     });
 });
-//Almacenar todos los objetos en el localStorage
+
 let almacenarObjetoEnStorage = function(gif) {
-    //console.log(gif);
     giphy.setGifObject(gif);
 }
 
-//Carga de gif en la pagina
 let showInit = function(gif, contenedor){
-    console.log(gif);
-    console.log(contenedor);
-    let divContent = document.createElement("div"); // div contenedor del gif
+    let divContent = document.createElement("div");
     divContent.classList.add("gif");
     
     let img = document.createElement("img");
     img.src = gif.url;
     img.dataset.id = gif.id;
-    img.dataset.url = gif.url;
+    img.dataset.url = gif.url2;
     img.dataset.user = gif.user;
     img.dataset.name = gif.name;
     img.addEventListener('click', giphy.getFullGif);
@@ -40,33 +32,32 @@ let showInit = function(gif, contenedor){
     divOver.classList.add("over");
     divContent.appendChild(divOver);
 
-    let divIcons = document.createElement("div"); // div contenedor de los iconos
+    let divIcons = document.createElement("div");
     divIcons.classList.add("buttonGif");
 
-    let divfavorito = document.createElement("div"); // botón favoritos
+    let divfavorito = document.createElement("div"); 
     divfavorito.id = gif.id;
-    divfavorito.classList.add("no-favorito", "icon"); // todos los gif empiezan sin ser favoritos
-    if(storage.getIdFavoritos(gif.id)!= null) // Se evalua si el gif está en favorito
-        divfavorito.classList.add(CLASS_FAVORITO); // Si es favorito, se agrega la clase 
+    divfavorito.classList.add("no-favorito", "icon"); 
+    if(storage.getIdFavoritos(gif.id)!= null) 
+        divfavorito.classList.add(CLASS_FAVORITO);  
     divfavorito.addEventListener("click", giphy.driverFav)
     
     divIcons.appendChild(divfavorito);
     
-    let divDescarga = document.createElement("div"); // botón descarga
+    let divDescarga = document.createElement("div"); 
     divDescarga.id = gif.id;
-    divDescarga.dataset.url = gif.url; //almacenado datos como atributos de elemento html
+    divDescarga.dataset.url = gif.url; 
     divDescarga.dataset.nombre = gif.name;
     divDescarga.classList.add("descarga", "icon");
     divDescarga.addEventListener("click",(e)=>{
-        //llamado al metodo descargarGif de la clase Giphy
         giphy.descargarGif(e.currentTarget.dataset['url'], e.currentTarget.dataset['nombre']);
     });
     divIcons.appendChild(divDescarga);
     
-    let divFull = document.createElement("div"); // botón para la versión full
+    let divFull = document.createElement("div");
     divFull.dataset.id = gif.id;
     divFull.classList.add("full", "icon");
-    divFull.dataset.url = gif.url;
+    divFull.dataset.url = gif.url2;
     divFull.dataset.user = gif.user;
     divFull.dataset.name = gif.name;
     divFull.addEventListener('click', giphy.getFullGif);
@@ -93,87 +84,6 @@ let showInit = function(gif, contenedor){
     divContent.appendChild(divOver);
     contenedor.appendChild(divContent);
 }
-
-
-
-
-/* // Petición inicial => Trendings //
-
-const API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
-
-let url = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=3`;
-
-async function getGifsInit(url) {
-    let response = await fetch(url);
-    let gifs = await response.json();
-    return gifs;
-}
-
-let allGifs = [];
-
-getGifsInit(url).then((gifsData) => {
-    console.log(gifsData);
-    gifsData.data.forEach(gifData => {
-        showInit(gifData);
-        var nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, false);
-        allGifs.push(nGif);
-    });
-});
-
-// Agregar respuesta de la petición a la sección correspondiente //
-
-//let out = document.getElementById('galery'); // Obtener el contenedor de los gifs //
-
-let showInit = (gifData) => {
-    //console.log(out);
-    out.insertAdjacentHTML('beforeend',
-    `<li class="item"><div id="gif" class="gif">
-            <img id="full" src="${gifData.images.preview_gif.url}" alt="${gifData.title}">
-            <div class="over">
-                <div class="buttonGif">
-                    <a href="#"><img id="fav" class="icon" src='./assets/icons/icon-fav-hover.svg'></a>
-                    <img id="dow" class="icon" src='./assets/icons/icon-download.svg'>
-                    <a href="javascript:showFull('${gifData.images.preview_gif.url}','${gifData.username}','${gifData.title}')"><img id="ful" class="icon" src='./assets/icons/icon-max-normal.svg'></a>
-                </div>
-                <div class="infoGif">
-                    <p id="user">${gifData.username}</p>
-                    <p id="hover-title">${gifData.title}</p>
-                </div>
-            </div>
-    </div></li>`);
-} */
-
-// Obtener y agregar funcionalidad al botón favoritos
-
-/* let bFav = document.getElementById('fav');
-console.log(bFav); */
-
-// Versión Full //
-
-/* function showFull (url, user, title) {
-    //console.log(url);
-    let fullOver = document.getElementById('fOver');
-    let fullImg = document.getElementById('fullImg');
-    let fullUser = document.getElementById('pOne');
-    let fullTitle = document.getElementById('pTwo');
-    //console.log(fullImg);
-    fullOver.style.display = 'flex';
-    fullImg.src = url;
-    fullUser.textContent = user;
-    fullTitle.textContent = title;
-
-    divfavorito.addEventListener("click",(e)=>{
-        // En esta sección podría operar con el atributo mark que tengo en el objeto almacenado en el localStorage
-        if(e.currentTarget.classList.contains(CLASS_FAVORITO)){
-            // Si tiene la clase favorito se elimina porque lo están retirando
-            e.currentTarget.classList.remove(CLASS_FAVORITO);
-            giphy.remFovoritById(e.currentTarget);
-        }else{
-            //Si NO tiene la clase favorito se adiciona porque lo están agregando
-            e.currentTarget.classList.add(CLASS_FAVORITO);
-            giphy.addFavoritById(e.currentTarget);
-        }
-} */
 
 // Cambio de tema //
 
@@ -220,3 +130,36 @@ function changeIcon() {
         menu.classList.add('off');
     }
 };
+
+// Carousel //
+
+var item = 0;
+var left = document.getElementById('prev');
+var right = document.getElementById('next');
+
+left.addEventListener('click', ()=>{changeItem(1)});
+right.addEventListener('click', ()=>{changeItem(2)});
+
+function changeItem(n){
+    if (n == 1) {
+        
+        if (item == 0) {
+            item = 24
+        } else {
+            item--
+        }
+    } else {
+        if (item == 24) {
+            item = 2;
+        } else {
+            item++
+        }
+    }
+
+    for (let i = 0; i < document.querySelectorAll(".gif").length; i++) {
+        document.querySelectorAll(".gif")[i].style.display = 'none';
+    }
+    document.querySelectorAll(".gif")[item].style.display = 'flex';
+    document.querySelectorAll(".gif")[item + 1].style.display = 'flex';
+    document.querySelectorAll(".gif")[item + 2].style.display = 'flex';
+}

@@ -145,18 +145,23 @@
                     margin-top: 24px;
                 }
 
-                .search {
+                .cont-list {
                     width: 551px;
-                    height: 50px;
-
-                    input {
+    
+                    #itemSug {
                         margin-left: 54px;
-                        //border: $borde;
-                    }
 
-                    a {
-                        margin-right: 20px;
-                        //border: $borde;
+                        #first {
+                            list-style: none;
+                            
+                            input {
+                                width: 485px;
+
+                                &.active {
+                                    width: 485px;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -213,6 +218,7 @@
                         .gif {
                             width: 260px;
                             height: 200px;
+                            position: relative;
 
                             .over {
                                 width: 0;
@@ -230,7 +236,7 @@
                                     display: none;
                                     flex-direction: row;
                                     justify-content: flex-end;
-                                    margin: 5px;
+                                    margin: 10px;
                     
                                     .icon {
                                         width: 24px;
@@ -368,9 +374,21 @@
                             width: 357px;
                             height: 275px;
                             position: relative;
-                                
-                            //border: $borde;
                             margin-top: 53px;
+
+                            display: none;
+
+                            &:first-child{
+                                display: flex;
+                            }
+
+                            &:nth-child(2){
+                                display: flex;
+                            }
+
+                            &:nth-child(3){
+                                display: flex;
+                            }
 
                             .over {
                                 width: 0;
@@ -565,6 +583,46 @@
                     padding-top: unset;
                     padding-left: 19px;
                     //width: 20px;
+
+                    &.dark{
+                        &:hover{
+                            filter: brightness(5);
+                        }
+                    }
+                }
+
+                .redesIcon {
+                    cursor: pointer;
+                }
+                
+                #facebook {
+                    &:hover {
+                        content: url(../assets/icons/icon_facebook_hover.svg);
+                    }
+
+                    &.dark {
+                        content: url(../assets/icons/icon_facebook_noc.svg);   
+                    }
+                }
+    
+                #twitter {
+                    &:hover {
+                        content: url(../assets/icons/icon-twitter-hover.svg);
+                    }
+
+                    &.dark {
+                        content: url(../assets/icons/icon_twitter_noc.svg);
+                    }
+                }
+    
+                #instagram{
+                    &:hover{
+                        content: url(../assets/icons/icon_instagram-hover.svg);
+                    }
+
+                    &.dark{
+                        content: url(../assets/icons/icon_instagram_noc.svg);
+                    }
                 }
             }
 

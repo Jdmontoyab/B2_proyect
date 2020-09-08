@@ -3,11 +3,11 @@
 //#########Global###########//
 
 class Gif{
-	constructor(name, user, url, mark, id){
+	constructor(name, user, url, url2, id){
         this.name = name;
         this.user = user;
 		this.url = url;
-        this.mark = mark;
+        this.url2 = url2;
         this.id = id;
     }
 }
@@ -33,24 +33,40 @@ class MiStorage{
         let ids = this.miStorage.getItem(this.IDS_LIST)!=null?this.miStorage.getItem(this.IDS_LIST).split(','):[];
         ids.push(id);
         this.miStorage.setItem(this.IDS_LIST,ids);
-        
     }
     getIdsMisGifs(){
-        return this.miStorage.getItem(IDS_LIST);
+        return this.miStorage.getItem(this.IDS_LIST);
     }
 }
+
 class Giphy{
     constructor(){
         this.API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
         this.URL_TRENDING = 'https://api.giphy.com/v1/gifs/trending';
         this.URL_BASE = 'https://api.giphy.com/v1/gifs';
         this.URL_UPLOAD = 'https://upload.giphy.com/v1/gifs';
+        this.URL_SUGGEST = 'https://api.giphy.com/v1/tags/related';
     }
 
-    async getTrending(limit=3, offset=0){//async y await
+    async getTrending(limit=25, offset=0){//async y await
         let response = await fetch(this.URL_TRENDING+'?api_key='+this.API_KEY+'&limit='+limit+'&offset='+offset);//concatenando
         let gifs = await response.json();
         return gifs;
+    }
+
+    async getSuggest(input) {
+        //let input = event.target.value;
+        let search = document.getElementById('search');
+
+        if (input) {
+            let response = await fetch(`${this.URL_SUGGEST}/${input}?api_key=${this.API_KEY}`);
+            let suggests = await response.json();
+            return suggests;
+        } else {
+            search.classList.remove('active');
+            ulItems.classList.add('after');
+            return null;
+        }
     }
 
     async getGifsSearch(input){
@@ -66,14 +82,14 @@ class Giphy{
     }
 
     async getGifsPorIds(ids){
-        if(ids.length==0) return null;
-        let returnData=null;
+        if(ids.length == 0) return null;
+        let returnData = null;
         await fetch(`${this.URL_BASE}?api_key=${this.API_KEY}&ids=${ids.toString()}`)
-                .then(res=>res.json()
-                    .then(data=>{
-                        returnData=data.data;
+                .then(res => res.json()
+                    .then(data => {
+                        returnData = data.data;
                     })
-                ).catch(err=>console.error(err));
+                ).catch(err => console.error(err));
         return returnData;
     }
 
@@ -211,4 +227,6 @@ class Giphy{
         //console.log(data);
         return data.data;
     }
+
+    getMisGifos
 }

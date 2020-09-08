@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-#container main #inspirate .search input {
+#container main #inspirate .cont-list #itemSug #first input {
   border: none;
   font-family: 'Roboto', sans-serif;
   color: #000;
@@ -316,39 +316,92 @@
   margin-top: 31px;
 }
 
-#container main #inspirate .search {
-  width: 89.1%;
-  height: 50px;
-  border-radius: 27px;
+#container main #inspirate .cont-list {
+  width: 334px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px solid #572EE5;
+  border-radius: 27px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-#container main #inspirate .search input {
-  margin-left: 55px;
+#container main #inspirate .cont-list.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#container main #inspirate .search input.dark {
-  color: #FFF;
+#container main #inspirate .cont-list #itemSug {
+  margin-left: 21px;
 }
 
-#container main #inspirate .search a {
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
+#container main #inspirate .cont-list #itemSug.after .items {
+  display: none;
 }
 
-#container main #inspirate .search a .LogoSearch {
-  width: 5.3%;
-  height: 1.7%;
+#container main #inspirate .cont-list #itemSug.again .items {
+  display: block;
+}
+
+#container main #inspirate .cont-list #itemSug #first {
+  list-style: none;
+}
+
+#container main #inspirate .cont-list #itemSug #first input {
+  width: 307px;
+  height: 50px;
+  background: url("../assets/icons/icon-search.svg") no-repeat;
+  background-position: 97% center;
+  padding-top: 10px;
+}
+
+#container main #inspirate .cont-list #itemSug #first input.active {
+  width: 314px;
+  outline: none;
+  background: url("../assets/icons/close.svg") no-repeat;
+  background-position: 97% center;
+  border-bottom: 2px solid #9CAFC3;
+  height: 50px;
+  margin-left: -10px;
+}
+
+#container main #inspirate .cont-list #itemSug #first input:focus {
+  outline: none;
+}
+
+#container main #inspirate .cont-list #itemSug li {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#container main #inspirate .cont-list #itemSug li:nth-child(2) {
+  margin-top: 20px;
+}
+
+#container main #inspirate .cont-list #itemSug li a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #9CAFC3;
+  text-align: left;
+  text-decoration: none;
+}
+
+#container main #inspirate .cont-list #itemSug li a img {
+  margin-right: 10px;
 }
 
 #container main #inspirate h3 {
@@ -406,6 +459,7 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin: 36px 21px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -417,7 +471,6 @@
 #container main #inspirate .results .gif {
   width: 156px;
   height: 120px;
-  position: relative;
 }
 
 #container main #inspirate .results .gif .over {
@@ -585,72 +638,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /* .corner {
-                        width: 27px;
-                        height: 25px;
-                    }
-
-                    #esquinasSup {
-                        display: flex;
-                        justify-content: space-between;
-
-                        #supIzq {
-                            border-top: 2px solid $colorSecundary;
-                            border-left: 2px solid $colorSecundary;
-                            margin-top: 20px;
-                            margin-left: 20px;
-                        }
-
-                        #supDer {
-                            border-top: 2px solid $colorSecundary;
-                            border-right: 2px solid $colorSecundary;
-                            margin-top: 20px;
-                            margin-right: 20px;
-                        }
-                    }
-
-                    #string {
-                        //border: solid;
-                        h4 {
-                            color: $colorPrimary;
-                            font-family: 'Montserrat', sans-serif;
-                            font-size: 25px;
-                            line-height: 35px;
-                            text-align: center;
-                            margin-top: 65px;
-                        }
-                    
-                        #Gifos {
-                            color: $colorSecundary;
-                        }
-                    
-                        p {
-                            font-size: 16px;
-                            line-height: 29px;
-                            font-family: 'Roboto', sans-serif;
-                            text-align: center;
-                            color: $colorBlack;
-                        } 
-                    }
-
-                    #esquinasInf {
-                        display: flex;
-                        justify-content: space-between;
-
-                        #infIzq {
-                            border-bottom: 2px solid $colorSecundary;
-                            border-left: 2px solid $colorSecundary;
-                            margin-bottom: 20px;
-                            margin-left: 20px;
-                        }
-                    
-                        #infDer {
-                            border-bottom: 2px solid $colorSecundary;
-                            border-right: 2px solid $colorSecundary;
-                            margin-bottom: 20px;
-                            margin-right: 20px;
-                        }
-                    } */
 }
 
 #container main #inspirate #containerMisGifos1 #pantalla #video {
@@ -754,7 +741,6 @@
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding-left: 155px;
 }
 
 #container main #inspirate #containerMisGifos1 #contNumCrono #numeros .num {
@@ -770,7 +756,6 @@
   letter-spacing: 0;
   text-align: center;
   position: relative;
-  right: -70px;
 }
 
 #container main #inspirate #containerMisGifos1 #linea {
@@ -851,7 +836,6 @@
 #container main #trending .content #galery .gif {
   width: 243px;
   height: 187px;
-  position: relative;
   margin: 32px 11px 82px;
 }
 
@@ -1132,15 +1116,20 @@
     height: 190px;
     margin-top: 24px;
   }
-  #container main #inspirate .search {
+  #container main #inspirate .cont-list {
     width: 551px;
-    height: 50px;
   }
-  #container main #inspirate .search input {
+  #container main #inspirate .cont-list #itemSug {
     margin-left: 54px;
   }
-  #container main #inspirate .search a {
-    margin-right: 20px;
+  #container main #inspirate .cont-list #itemSug #first {
+    list-style: none;
+  }
+  #container main #inspirate .cont-list #itemSug #first input {
+    width: 485px;
+  }
+  #container main #inspirate .cont-list #itemSug #first input.active {
+    width: 485px;
   }
   #container main #inspirate h3 {
     margin-top: 73px;
@@ -1183,6 +1172,7 @@
   #container main #inspirate .results .gif {
     width: 260px;
     height: 200px;
+    position: relative;
   }
   #container main #inspirate .results .gif .over {
     width: 0;
@@ -1211,7 +1201,7 @@
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin: 5px;
+    margin: 10px;
   }
   #container main #inspirate .results .gif .over .buttonGif .icon {
     width: 24px;
@@ -1320,6 +1310,22 @@
     height: 275px;
     position: relative;
     margin-top: 53px;
+    display: none;
+  }
+  #container main #trending .content #galery .gif:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #container main #trending .content #galery .gif:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #container main #trending .content #galery .gif:nth-child(3) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   #container main #trending .content #galery .gif .over {
     width: 0;
@@ -1507,6 +1513,31 @@
   #container footer .redes img {
     padding-top: unset;
     padding-left: 19px;
+  }
+  #container footer .redes img.dark:hover {
+    -webkit-filter: brightness(5);
+            filter: brightness(5);
+  }
+  #container footer .redes .redesIcon {
+    cursor: pointer;
+  }
+  #container footer .redes #facebook:hover {
+    content: url(../assets/icons/icon_facebook_hover.svg);
+  }
+  #container footer .redes #facebook.dark {
+    content: url(../assets/icons/icon_facebook_noc.svg);
+  }
+  #container footer .redes #twitter:hover {
+    content: url(../assets/icons/icon-twitter-hover.svg);
+  }
+  #container footer .redes #twitter.dark {
+    content: url(../assets/icons/icon_twitter_noc.svg);
+  }
+  #container footer .redes #instagram:hover {
+    content: url(../assets/icons/icon_instagram-hover.svg);
+  }
+  #container footer .redes #instagram.dark {
+    content: url(../assets/icons/icon_instagram_noc.svg);
   }
   #container footer #p2 {
     font-size: 13px;

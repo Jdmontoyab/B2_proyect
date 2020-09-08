@@ -7,8 +7,6 @@ let clearCrearGifos = () => {
 }
 
 const crearGifos = (container) => {
-    //console.log(container);
-
     container.insertAdjacentHTML('beforeend',
     `<div id="camara">
         <img id="logoCam" class="light" src="./assets/icons/camara.svg"></img>
@@ -38,15 +36,13 @@ const crearGifos = (container) => {
             <img id="two" class="num" src="./assets/icons/paso-a-paso.svg" alt="two">
             <img id="three" class="num" src="./assets/icons/paso-a-paso.svg" alt="three">         
         </div>
-        <h5 id="crono"></h5>
+        <h5 id="crono">00:00:01</h5>
         </div>
         <div id="linea"></div>
         <button id="start" class="show" onclick="start()">COMENZAR</button>
     </div>
     <img id="cinta" class="light" src="./assets/icons/pelicula.svg" alt="Cinta">`);
 }
-
-//let video = document.getElementById('video');
 
 function getStreamAndRecord () { 
     navigator.mediaDevices.getUserMedia({
@@ -61,6 +57,8 @@ function getStreamAndRecord () {
         let stepOne = document.getElementById('one');
         let stepTwo = document.getElementById('two');
         let button = document.getElementById('start');
+        let string = document.getElementById('string');
+        string.style.display = 'none';
         stepTwo.src = "./assets/icons/paso-a-paso-hover.svg";
         stepOne.src = "./assets/icons/paso-a-paso.svg";
         button.classList.remove('hide');
@@ -104,38 +102,28 @@ const getGrabar = () => {
 function getStop() {
     recorder.stopRecording(function() {
         let blob = recorder.getBlob();
-        giphy.guardarGiphy(blob).then(data => {
-            let s = new MiStorage();
-            s.setIdsMisGifs(data.id);
-            console.log('Finalizó la carga');
-        });
+        //console.log('Prueba' + JSON.parse(blob));
+        let button = document.getElementById('start');
+        let crono = document.getElementById('crono');
+
+        button.innerText = 'SUBIR GIFO';
+        crono.innerText = 'REPETIR CAPTURA';
+
+        button.addEventListener('click', () => {
+            upLoadGif(blob);
+        })
     });
 }
 
-
- 
-/* recorder = RecordRTC(stream, {
-    type: 'gif',
-    frameRate: 1,
-    quality: 10,
-    width: 360,
-    hidden: 240,
-    onGifRecordingStarted: function() {
-    console.log('started')
-   },
-}); */
-
-/* navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: false
-}).then(async function(stream) {
-    let recorder = RecordRTC(stream, {
-        type: 'video'
+function upLoadGif(blob) {
+    giphy.guardarGiphy(blob).then(data => {
+            let s = new MiStorage();
+            s.setIdsMisGifs(data.id);
+            console.log('Finalizó la carga');
     });
-    recorder.startRecording();
 
-    recorder.stopRecording(function() {
-        let blob = recorder.getBlob();
-        invokeSaveAsDialog(blob);
-    });
-}); */
+    let stepTwo = document.getElementById('two');
+    let stepThree = document.getElementById('three');
+    stepTwo.src = "./assets/icons/paso-a-paso.svg";
+    stepThree.src = "./assets/icons/paso-a-paso-hover.svg";
+}

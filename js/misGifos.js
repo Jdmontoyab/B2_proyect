@@ -1,15 +1,25 @@
 let clearGifos = () => {
-    //location.reload();
-    document.getElementById('inspirate').innerHTML = '';
-    let container = document.getElementById('inspirate');
-    container.classList.remove('crearGifos');
-    changeIcon();
-    misGifos(container);
+    if (storage.getIdsMisGifs() == "") {
+        document.getElementById('inspirate').innerHTML = '';
+        changeIcon();
+        sinMisGifos(prueba);
+        flag = true;
+    } else {
+        document.getElementById('inspirate').innerHTML = '';
+        changeIcon();
+        conMisGifos(prueba);
+        let container = document.getElementById('results');
+        giphy.getGifsPorIds(storage.getIdsMisGifs()).then((gifsData) => {
+            if(gifsData!=null)
+            gifsData.forEach(gifData => {
+                let nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, gifData.images.downsized_medium.url, gifData.id);
+                showInit(nGif, container);
+            });
+        });
+    }
 }
 
-const misGifos = (container) => {
-    console.log(container);
-
+const sinMisGifos = (container) => {
     container.insertAdjacentHTML('beforeend',
     `<img id="logoMis" src="./assets/icons/icon-mis-gifos.svg"></img>
     <h2 id="titleMis">Mis GIFOS</h2>
@@ -17,9 +27,10 @@ const misGifos = (container) => {
     <h2 id="titleAni">¡Animate a crear tu primer GIFO!</h2>`);
 }
 
-/* out.insertAdjacentHTML('beforeend',
-        `<div id="gif" class="gif">
-            <a href="javascript:showFull('${gif.images.preview_gif.url}','${gif.username}','${gif.title}')"><img id="response" src="${gif.images.preview_gif.url}" alt="${gif.title}"></a>
-            
-        </div>`); */
+const conMisGifos = (container) => {
+    container.insertAdjacentHTML('beforeend',
+    `<img id="logoMis" src="./assets/icons/icon-mis-gifos.svg"></img>
+    <h2 id="titleMis">Mis GIFOS</h2>
+    <div id="results" class="results"></div>`);
+}
 

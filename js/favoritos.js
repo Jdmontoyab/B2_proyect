@@ -3,26 +3,20 @@
 let prueba = document.getElementById('inspirate');
 
 let clearFav = () => {
-    //location.reload();
     if (storage.getIdsFavoritos() == "") {
         document.getElementById('inspirate').innerHTML = '';
-        //container.classList.remove('crearGifos');
         changeIcon();
         sinFavoritos(prueba);
         flag = true;
-        //getFavorites(allGifs);
     } else {
         document.getElementById('inspirate').innerHTML = '';
         changeIcon();
         conFavoritos(prueba);
-        //document.getElementById('results').innerHTML = '';
         let container = document.getElementById('results');
-        //container.classList.add('results');
         giphy.getGifsPorIds(storage.getIdsFavoritos()).then((gifsData) => {
-            console.log(gifsData);//TODO: eliminar
             if(gifsData!=null)
             gifsData.forEach(gifData => {
-                let nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, false, gifData.id);
+                let nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, gifData.images.downsized_medium.url, gifData.id);
                 showInit(nGif, container);
             });
         });
@@ -46,12 +40,6 @@ const conFavoritos = (container) => {
     <div id="results" class="results"></div>`);
 }
 
-//#########Globales###########//
-//let favoritos = document.getElementById("inspirate");
-//let giphy = new Giphy();
-//let storage = new MiStorage();
-
-
 let showFav = function(gif){
     let contenedor = document.getElementById("results");
     let img = document.createElement("img");
@@ -62,8 +50,6 @@ let showFav = function(gif){
 
 let obtenerObjectEnStorage = function () {
     let gifs = giphy.getGifObjects();
-    //console.log(gifs);
-    //showFav(gif);
 }
 obtenerObjectEnStorage();
 
