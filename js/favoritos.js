@@ -1,8 +1,8 @@
 // Limpiar sección favoritos //
 
-let prueba = document.getElementById('inspirate');
-
 let clearFav = () => {
+    let prueba = document.getElementById('inspirate');
+    prueba.classList.remove('crearGifos');
     if (storage.getIdsFavoritos() == "") {
         document.getElementById('inspirate').innerHTML = '';
         changeIcon();
@@ -26,17 +26,17 @@ let clearFav = () => {
 const sinFavoritos = (container) => {
     container.insertAdjacentHTML('beforeend',
     `<img id="logoMis" src="./assets/icons/icon-favoritos.svg"></img>
-    <h2 id="titleMis">Favoritos</h2>
+    <h2 id="titleMis" class="light">Favoritos</h2>
     <div id="results">
         <img id="logoSin" src="./assets/icons/icon-fav-sin-contenido.svg"></img>
-        <h2 id="titleAni">"¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!"</h2>
+        <h2 id="titleAni" class="light">"¡Guarda tu primer GIFO en Favoritos <br> para que se muestre aquí!"</h2>
     </div>`);
 }
 
 const conFavoritos = (container) => {
     container.insertAdjacentHTML('beforeend',
     `<img id="logoMis" src="./assets/icons/icon-favoritos.svg"></img>
-    <h2 id="titleMis">Favoritos</h2>
+    <h2 id="titleMis" class="light">Favoritos</h2>
     <div id="results" class="results"></div>`);
 }
 

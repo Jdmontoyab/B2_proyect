@@ -42,14 +42,21 @@ class MiStorage{
 class Giphy{
     constructor(){
         this.API_KEY = 'q5Lb7RCg18Q0OZU4RqBRJb1BmwQvkpWs';
+        this.URL_TEXT_TRENDING = 'https://api.giphy.com/v1/trending/searches';
         this.URL_TRENDING = 'https://api.giphy.com/v1/gifs/trending';
         this.URL_BASE = 'https://api.giphy.com/v1/gifs';
         this.URL_UPLOAD = 'https://upload.giphy.com/v1/gifs';
         this.URL_SUGGEST = 'https://api.giphy.com/v1/tags/related';
     }
 
-    async getTrending(limit=25, offset=0){//async y await
-        let response = await fetch(this.URL_TRENDING+'?api_key='+this.API_KEY+'&limit='+limit+'&offset='+offset);//concatenando
+    async getTextTrending() {
+        let response = await fetch(this.URL_TEXT_TRENDING+'?api_key='+this.API_KEY);
+        let gifs = await response.json();
+        return gifs;
+    }
+
+    async getTrending(limit = 25, offset = 0) {
+        let response = await fetch(this.URL_TRENDING+'?api_key='+this.API_KEY+'&limit='+limit+'&offset='+offset);
         let gifs = await response.json();
         return gifs;
     }
@@ -227,6 +234,4 @@ class Giphy{
         //console.log(data);
         return data.data;
     }
-
-    getMisGifos
 }

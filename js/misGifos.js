@@ -1,4 +1,6 @@
 let clearGifos = () => {
+    let prueba = document.getElementById('inspirate');
+    prueba.classList.remove('crearGifos');
     if (storage.getIdsMisGifs() == "") {
         document.getElementById('inspirate').innerHTML = '';
         changeIcon();
@@ -10,7 +12,8 @@ let clearGifos = () => {
         conMisGifos(prueba);
         let container = document.getElementById('results');
         giphy.getGifsPorIds(storage.getIdsMisGifs()).then((gifsData) => {
-            if(gifsData!=null)
+            //console.log(gifsData);
+            if(gifsData != null)
             gifsData.forEach(gifData => {
                 let nGif = new Gif(gifData.title, gifData.username, gifData.images.preview_gif.url, gifData.images.downsized_medium.url, gifData.id);
                 showInit(nGif, container);

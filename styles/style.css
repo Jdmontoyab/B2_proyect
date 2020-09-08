@@ -49,7 +49,7 @@
   text-align: center;
 }
 
-#container main #inspirate p {
+#container main #inspirate #reactions a {
   color: #572EE5;
   font-family: 'Montserrat-medium', sans-serif;
   font-size: 14px;
@@ -344,6 +344,10 @@
   display: flex;
 }
 
+#container main #inspirate .cont-list.dark {
+  border-color: #FFF;
+}
+
 #container main #inspirate .cont-list #itemSug {
   margin-left: 21px;
 }
@@ -382,6 +386,17 @@
   outline: none;
 }
 
+#container main #inspirate .cont-list #itemSug #first input.dark {
+  background: url("../assets/icons/icon-search-mod-noc.svg") no-repeat;
+  background-position: 97% center;
+  color: #FFF;
+}
+
+#container main #inspirate .cont-list #itemSug #first input.dark.active {
+  background: url("../assets/icons/close-modo-noct.svg") no-repeat;
+  background-position: 97% center;
+}
+
 #container main #inspirate .cont-list #itemSug li {
   list-style: none;
   text-align: left;
@@ -404,12 +419,38 @@
   margin-right: 10px;
 }
 
+#container main #inspirate .cont-list #itemSug li a img.dark {
+  content: url("../assets/icons/icon-search-mod-noc.svg");
+}
+
+#container main #inspirate .cont-list #itemSug li a.dark {
+  color: #FFF;
+}
+
 #container main #inspirate h3 {
   margin-top: 31px;
 }
 
-#container main #inspirate p {
-  margin: 2px 75px 45px;
+#container main #inspirate #reactions {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#container main #inspirate #reactions a {
+  text-decoration: none;
+}
+
+#container main #inspirate #reactions a.dark {
+  color: #FFF;
 }
 
 #container main #inspirate #span {
@@ -424,6 +465,10 @@
   display: none;
   margin: 43px 0 38px;
   line-height: 40px;
+}
+
+#container main #inspirate #title.dark {
+  color: #FFF;
 }
 
 #container main #inspirate .not {
@@ -515,6 +560,18 @@
 #container main #inspirate #see:hover {
   background: #572EE5;
   color: #FFF;
+}
+
+#container main #inspirate #see.dark {
+  background: #37383C;
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+
+#container main #inspirate #see.dark:hover {
+  background: #FFF;
+  border: 1px solid #37383C;
+  color: #000;
 }
 
 #container main #inspirate #conFav {
@@ -1135,10 +1192,8 @@
     margin-top: 73px;
     font-size: 18px;
   }
-  #container main #inspirate p {
-    font-size: 16px;
-    margin-top: 7px;
-    margin-bottom: 37px;
+  #container main #inspirate #reactions {
+    width: 500px;
   }
   #container main #inspirate #span {
     width: 338px;

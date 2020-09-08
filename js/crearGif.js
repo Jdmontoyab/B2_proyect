@@ -36,13 +36,16 @@ const crearGifos = (container) => {
             <img id="two" class="num" src="./assets/icons/paso-a-paso.svg" alt="two">
             <img id="three" class="num" src="./assets/icons/paso-a-paso.svg" alt="three">         
         </div>
-        <h5 id="crono">00:00:01</h5>
+        <h5 id="crono">00:00:00</h5>
         </div>
         <div id="linea"></div>
         <button id="start" class="show" onclick="start()">COMENZAR</button>
     </div>
     <img id="cinta" class="light" src="./assets/icons/pelicula.svg" alt="Cinta">`);
 }
+
+/* let button = document.getElementById('start');
+console.log(button); */
 
 function getStreamAndRecord () { 
     navigator.mediaDevices.getUserMedia({
@@ -65,6 +68,7 @@ function getStreamAndRecord () {
         button.classList.add('show');
         button.innerText = 'GRABAR';
         button.onclick = getGrabar;
+        //button.onclick = timer();
     });
 }
 
@@ -86,6 +90,35 @@ const start = () => {
 let recorder;
 
 const getGrabar = () => {
+    // Timer // 
+
+    let crono = document.getElementById('crono');
+    let seconds = 0;
+    let minutes = 0;
+    let hours = 0;
+    let t;
+
+    function contar() {
+        console.log(crono);
+        seconds++;
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+        crono.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+        timer();
+    }
+
+    function timer() {
+        t = setTimeout(contar, 1000);
+        console.log(t);
+    }
+
     let button = document.getElementById('start');
     let video = document.getElementById('video');
     button.innerText = 'FINALIZAR';
@@ -96,7 +129,13 @@ const getGrabar = () => {
 
     recorder.startRecording();
 
-    button.onclick = getStop;
+    timer();
+
+    //button.onclick = getStop;
+    button.onclick = function () {
+        clearTimeout(t);
+        getStop();
+    }
 }
 
 function getStop() {
@@ -127,3 +166,25 @@ function upLoadGif(blob) {
     stepTwo.src = "./assets/icons/paso-a-paso.svg";
     stepThree.src = "./assets/icons/paso-a-paso-hover.svg";
 }
+
+
+
+
+/* Start button */
+
+/* let contador = 0;
+
+if (contador == 0) {
+    button.onclick = timer;
+    contador++;
+} else if (contador == 1) {
+    button.onclick = function() {
+        clearTimeout(t);
+    };
+    contador++;
+} else {
+    button.onclick = function() {
+        h1.textContent = "00:00:00";
+        seconds = 0; minutes = 0; hours = 0;
+    }
+} */

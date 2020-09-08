@@ -2,7 +2,16 @@ let giphy = new Giphy();
 let storage = new MiStorage();
 const CLASS_FAVORITO='favorito';
 
+giphy.getTextTrending().then((text) => {
+    let contString = document.getElementById('reactions');
+    contString.innerText = '';
+    text.data.forEach((reaction) => {
+        contString.insertAdjacentHTML('beforeend', `<a href="javascript:search('${reaction}')" class="light">${reaction + ','}</a>`);
+    });
+});
+
 giphy.getTrending().then((gifs) => {
+    console.log(gifs);
     let contenedor = document.getElementById("galery");
     contenedor.innerHTML='';
     gifs.data.forEach(gifData => {
@@ -18,6 +27,7 @@ let almacenarObjetoEnStorage = function(gif) {
 let showInit = function(gif, contenedor){
     let divContent = document.createElement("div");
     divContent.classList.add("gif");
+    //console.log(gif);
     
     let img = document.createElement("img");
     img.src = gif.url;

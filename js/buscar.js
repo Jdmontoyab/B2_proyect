@@ -22,7 +22,7 @@ input.addEventListener('keyup', (element) => {
         suggest.data.forEach(e => {
             first.insertAdjacentHTML('afterend',
             `<li name="items" class="items">
-                <a href="javascript:search('${e.name}')"><img src='./assets/icons/icon-search.svg' alt="Lupa" />${e.name}</a>
+                <a href="javascript:search('${e.name}')" class="light"><img class="light" src='./assets/icons/icon-search.svg' alt="Lupa" />${e.name}</a>
             </li>`);
         });
     });
@@ -69,8 +69,6 @@ let search = (str) => {
         });
     }
 }
-
-// Búsqueda sin resultados
 
 let notResults = () => {
     document.getElementById('results').innerHTML = '';
